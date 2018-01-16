@@ -4,7 +4,14 @@
             <div class="title-wrapper">
                 
                 <!-- <span class="title">{{title.text}}</span> -->
-                <span class="title">{{title.text}}</span>
+                <span class="title">{{title.text}}
+                  <img class="img1" src="../../assets/genhuan.png" alt="kkk" @click="fun1"/>
+                </span>
+
+                <span v-if="title.setting" class="right" @click="setting">
+                    <img src="../../assets/setting.png" alt="设置" />
+                </span>
+                
 
             </div>
         </div>
@@ -22,7 +29,7 @@
     height: 44px;
     background-color: rgb(219, 60, 62);
     line-height: 44px;
-    text-align: center; 
+    text-align: center;
     .title-wrapper {
       font-size: 15px;
       color: #fcfcfc;
@@ -30,8 +37,26 @@
         display: inline-block;
       }
       .title {
-        width: 74%;
+        position: absolute;
+        width: 100%;
+        left: 50%;
+        margin-left: -50%;
+        font-size: 20px;
         font-weight: 500;
+      }
+      .img1 {
+        width: 17px;
+        height: 17px;
+      }
+
+      .right {
+        position: absolute;
+        right: 20px;
+        img {
+          width: 25px;
+          height: 25px;
+          vertical-align: middle;
+        }
       }
     }
   }
@@ -51,7 +76,12 @@ export default {
     return {};
   },
   methods: {
-    
+    fun1() {
+      alert(1);
+    },
+    setting(){
+      alert('setting');
+    }
   }
 };
 </script>

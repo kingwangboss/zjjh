@@ -1,11 +1,20 @@
 <template>
   <div>
       <m-header :title="title"></m-header>
-      <div>
-          hello
-      </div>
+      
+      
+
   </div>
 </template>
+
+<style lang="less" scoped>
+// .aaa {
+//   background-color: red;
+//   height: 100px;
+//   width: 100px;
+// }
+</style>
+
 
 <script>
 import mHeader from "../components/hearder/Hearder";
@@ -16,7 +25,8 @@ export default {
   data() {
     return {
       title: {
-        text: "时时彩"
+        text: "时时彩",
+        setting:true
       },
       dataList: []
     };
