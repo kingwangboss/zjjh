@@ -19,7 +19,7 @@ export default {
       user: {
         name: "kingwang3",
         pwd: "123456",
-        sid: "1"
+        sid: "9"
       }
     };
   },

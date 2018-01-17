@@ -27,7 +27,8 @@
   z-index: 2;
   .header {
     height: 44px;
-    background-color: rgb(219, 60, 62);
+    // background-color: rgb(219, 60, 62);
+    background: url(../../assets/jianbian.png);
     line-height: 44px;
     text-align: center;
     .title-wrapper {
