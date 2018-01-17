@@ -3,14 +3,20 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import global from './Global'
 import Mint from 'mint-ui'; 
 import 'mint-ui/lib/style.css'
 import {post,fetch,patch,put} from './util/http'
 import axios from 'axios'
+import { Indicator } from 'mint-ui'
+import sha256 from "./util/sha256";
 
 Vue.config.productionTip = false
 Vue.use(Mint);
 
+Vue.prototype.$sha256 = sha256;
+Vue.prototype.$global = global;
+Vue.prototype.$show = Indicator;
 Vue.prototype.$post = post;
 Vue.prototype.$fetch = fetch;
 Vue.prototype.$patch = patch;

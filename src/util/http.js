@@ -9,11 +9,11 @@ var loadinginstace
 axios.interceptors.request.use(
   config => {
 
-    Indicator.open(); 
+    // Indicator.open(); 
     return config
 
   }, error => {
-    Indicator.close();
+    // Indicator.close();
     Message.error({
       message: '加载超时'
     })
@@ -38,7 +38,7 @@ axios.interceptors.request.use(
 // http response 拦截器
 axios.interceptors.response.use(
   response => {// 响应成功关闭loading
-    Indicator.close();
+    // Indicator.close();
     // console.log(response);
     console.log('拦截器 MsgType:' + response.data.MsgType)
     console.log('拦截器 Msg:' + response.data.Msg)
@@ -168,7 +168,7 @@ axios.interceptors.response.use(
       return response
     }
   }, error => {
-    Indicator.close();
+    // Indicator.close();
     Message.error({
       message: '加载失败'
     })
