@@ -17,13 +17,14 @@
             <span>专家计划</span>
           </div>
           <div class="cell">
+            <img src="../assets/jihuafenxiang.png" alt="">
+            <span>我的计划</span>
+          </div>
+          <div class="cell">
             <img src="../assets/ruanjianbaoku.png" alt="">
             <span>软件宝库</span>
           </div>
-          <div class="cell">
-            <img src="../assets/jihuafenxiang.png" alt="">
-            <span>计划分享</span>
-          </div>
+          
         </div>
 
         <div class="line"></div>
