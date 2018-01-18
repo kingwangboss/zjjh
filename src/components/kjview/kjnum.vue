@@ -16,7 +16,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   .kjnum {
-    font-size: 14px;
+    font-size: 4vw;
     background: #ffffff;
     line-height: 30px;
     width: 30px;
@@ -27,7 +27,7 @@
     font-weight: 600;
   }
   .kjnum1 {
-    font-size: 14px;
+    font-size: 4vw;
     background: #6098f5;
     line-height: 30px;
     width: 30px;

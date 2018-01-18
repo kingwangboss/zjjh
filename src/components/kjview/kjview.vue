@@ -44,6 +44,7 @@
     }
     .qishu1 {
       color: #ffffff;
+      font-size: 4vw;
       height: 28px;
     }
   }
