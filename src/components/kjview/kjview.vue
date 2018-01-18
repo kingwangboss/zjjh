@@ -158,8 +158,8 @@ export default {
     }
   },
   created() {
-    this.KJData = Object.assign(this.kjdata);
-    this.nextTime = Object.assign(this.Time);
+    this.KJData = this.kjdata;
+    this.nextTime = this.Time;
   },
   beforeMount() {},
   mounted() {}

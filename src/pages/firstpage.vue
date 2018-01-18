@@ -17,7 +17,7 @@
             <span>专家计划</span>
           </div>
           <div class="cell">
-            <img src="../assets/jihuafenxiang.png" alt="">
+            <img src="../assets/wodejihua.png" alt="">
             <span>我的计划</span>
           </div>
           <div class="cell">
@@ -94,7 +94,6 @@ export default {
       kjData: "",
       nextTime: "",
       flag: false,
-      screenWidth: document.body.clientWidth
     };
   },
   components: {

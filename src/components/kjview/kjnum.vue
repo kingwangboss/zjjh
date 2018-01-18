@@ -66,7 +66,7 @@ export default {
     }
   },
   created() {
-    this.numArr = Object.assign(this.data);
+    this.numArr = this.data;
   },
   mounted() {
     const that = this;
