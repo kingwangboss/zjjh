@@ -69,7 +69,7 @@
     span {
       margin: 8px 0px;
       line-height: 4.5vw;
-      font-size: 2vw;
+      font-size: 3.5vw;
       color: #4c4c4c;
     }
     .line1 {
@@ -121,12 +121,12 @@
 
       .dtype1{
         position: relative;
-        top:1vw;
+        top:0.5vw;
         height: 4vw;
       }
       .stype1{
         position: relative;
-        top:1vw;
+        top:0.5vw;
         height: 4vw;
       }
     }
