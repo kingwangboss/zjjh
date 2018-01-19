@@ -59,8 +59,6 @@
   justify-content: space-between;
   .cell {
     margin: 10px 16px 10px 16px;
-    // border: 1px solid gray;
-    // border-style: none solid solid none;
     display: flex;
     flex-direction: column;
     -webkit-align-items: center;
@@ -77,7 +75,6 @@
       margin-top: 8px;
       font-size: 3vw;
       color: #333333;
-      line-height: 20px;
     }
   }
 }

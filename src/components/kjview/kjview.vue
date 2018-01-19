@@ -22,7 +22,6 @@
 
 <style lang="less" scoped>
 .kjview {
-  height: auto;
   width: 100%;
   background: url(../../assets/jianbian.png);
   background-repeat: no-repeat;
@@ -66,29 +65,7 @@
     .label1 {
       color: #ffffff;
       line-height: 25px;
-      font-size: 2vw;
-    }
-    .img {
-      width: 10px;
-      height: 10px;
-      margin-top: 3px;
-      margin-right: 5px;
-      padding-top: 2.5px; // background: url(../../../static/images/shouyeicon.png);
-      -moz-background-size: 70% 70%;
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-    }
-    .sj {
-      margin: 2px 2px;
-      background-color: #f7d90f;
-      border-radius: 2px;
-      line-height: 22px;
-      height: 20px;
-      padding: 0 3px;
-      text-align: center;
-      font-size: 15px;
-      font-weight: bold;
-      color: #ff0000;
+      font-size: 3vw;
     }
   }
 }

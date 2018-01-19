@@ -1,9 +1,4 @@
 <template>
-    <div class="content" v-if="count">
-        <div v-show="isLan(index)" class="kjnum" :style="{width:ojwidth+'px',height:ojwidth+'px',borderRadius:ojwidth+'px',lineHeight:ojwidth + 2 +'px'}" v-for="(item,index) in numArr">{{item}}</div>
-        <div v-show="!isLan(index)" class="kjnum1" :style="{width:ojwidth+'px',height:ojwidth+'px',borderRadius:ojwidth+'px',lineHeight:ojwidth + 2 +'px'}" v-for="(item,index) in numArr">{{item}}</div>
-    </div>
-
     <div class="content" v-else>
         <div v-show="isLan(index)" class="kjnum" :style="{width:ojwidth1+'px',height:ojwidth1+'px',borderRadius:ojwidth1+'px',lineHeight:ojwidth1 + 2 +'px'}" v-for="(item,index) in numArr">{{item}}</div>
         <div v-show="!isLan(index)" class="kjnum1" :style="{width:ojwidth1+'px',height:ojwidth1+'px',borderRadius:ojwidth1+'px',lineHeight:ojwidth1 + 2 +'px'}" v-for="(item,index) in numArr">{{item}}</div>
@@ -99,53 +94,21 @@ export default {
   //     numArr: num,
   // },
   computed: {
-    ojwidth: {
-      // getter
-      get: function() {
-        var ojwidth;
-        var margin;
-        var colnum = 10; //列
-        colnum = this.numArr.length > colnum ? colnum : this.numArr.length;
-        var rownum = this.numArr.length / colnum; //行
-        margin = this.numArr.length >= 10 ? 5 : 20; //间距
-        ojwidth = (this.screenWidth  - 2 * margin * colnum) / colnum; //格子的宽
-        if (this.numArr.length < 10) {
-          ojwidth = 23;
-        } else {
-        }
-        return ojwidth;
-      },
-      // setter
-      set: function(newValue) {}
-    },
+    
     ojwidth1: {
-      // getter
       get: function() {
         var ojwidth;
         var margin;
         var colnum = 10; //列
-        colnum = this.numArr.length > colnum ? colnum : this.numArr.length;
-        var rownum = this.numArr.length / colnum; //行
-        margin = this.numArr.length >= 10 ? 5 : 20; //间距
-        ojwidth = (this.screenWidth - 2 * margin * colnum) / colnum; //格子的宽
-        if (this.numArr.length < 10) {
-          ojwidth = 28;
-        } else {
-        }
+        colnum = this.numArr.length > colnum ? colnum : 10;
+        var rownum = 10 / colnum; //行
+        margin = 4.5; //间距
+        ojwidth = (this.screenWidth - 10  - 2 * margin * colnum) / colnum; //格子的宽
         return ojwidth;
       },
       // setter
       set: function(newValue) {}
     },
-    count: {
-      get() {
-        if (this.numArr.length <= 5) {
-          return true;
-        } else {
-          return false;
-        }
-      }
-    }
   }
 };
 </script>
