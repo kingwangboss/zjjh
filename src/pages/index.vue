@@ -17,7 +17,7 @@ export default {
         text: "登陆"
       },
       user: {
-        name: "kingwang",
+        name: "kingwang2",
         pwd: "123456",
         sid: "1"
       }

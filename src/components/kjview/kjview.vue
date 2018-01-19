@@ -66,7 +66,7 @@
     .label1 {
       color: #ffffff;
       line-height: 25px;
-      font-size: 13px;
+      font-size: 2vw;
     }
     .img {
       width: 10px;

@@ -10,9 +10,9 @@
           <div class="dashedline"></div>
           <span class="item2">{{cell.PlanSection}}</span>
           <div class="dashedline"></div>
-          <span class="item2">第{{cell.EndIndex}}期</span>
+          <span class="item3">第{{cell.EndIndex ? cell.EndIndex : 1}}期</span>
           <div class="dashedline"></div>
-          <span class="item3">{{cell.GuessValue}}</span>
+          <span class="item4">{{cell.GuessValue}}</span>
           <div class="dashedline"></div>
           <div class="baifenbi">
               {{cell.GuessPercent}}
@@ -47,12 +47,14 @@
 }
 .container {
   .cell {
+    box-shadow:#ebebeb 0px 4px 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     margin: 5px 1.2% 5px 1.2%;
     width: 30.2%;
+    // min-width: 30.2%;
     border-right: 1px solid #ebebeb;
     border-left: 1px solid #ebebeb;
     border-bottom: 1px solid #ebebeb;
@@ -78,7 +80,7 @@
       width: 100%;
     }
     .dashedline {
-      border: 0.5px dashed #ebebeb;
+      border-bottom: 1px dashed #ebebeb;
       margin:0px 15px;
     }
 
@@ -91,6 +93,11 @@
     .item2 {
     }
     .item3 {
+
+    }
+    .item4 {
+      margin-left:10px;
+      margin-right:10px;
     }
     .baifenbi {
       margin-top: 10px;
@@ -163,6 +170,12 @@ export default {
             return false;
         }
     }
+  },
+  watch: {
+   'plandata': function (now, old) {
+    this.celldata = this.plandata;
+   },
+   
   },
   created() {
     this.celldata = this.plandata;

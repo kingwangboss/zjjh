@@ -88,6 +88,7 @@ export default {
           // that.init()
           that.timer = false;
         }, 400);
+        console.log(this.screenWidth)
       }
     },
     'data':function(now,old){
