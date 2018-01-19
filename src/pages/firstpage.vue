@@ -180,9 +180,9 @@ export default {
             clearInterval(run);
             this.getkjData();
             this.getcelldata();
-            // console.log('yes');
+            console.log('yes');
           } else {
-            // console.log("no")
+            console.log("no")
           }
         })
         .catch(error => {

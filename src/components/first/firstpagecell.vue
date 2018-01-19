@@ -12,7 +12,13 @@
           <div class="dashedline"></div>
           <span class="item3">第{{cell.EndIndex ? cell.EndIndex : 1}}期</span>
           <div class="dashedline"></div>
-          <span class="item4">{{cell.GuessValue}}</span>
+          <span class="item4">
+            <!-- <span v-if="cell.DSType === 0" class="dtype">定</span>
+            <span v-else-if="cell.DSType === 1" class="stype">杀</span> -->
+            <img src="../../assets/ding.png" class="dtype1" v-if="cell.DSType === 0" alt="">
+            <img src="../../assets/sha.png" class="stype1" v-else-if="cell.DSType === 1" alt="">
+            <span>{{cell.GuessValue}}</span>
+          </span>
           <div class="dashedline"></div>
           <div class="baifenbi">
               {{cell.GuessPercent}}
@@ -62,6 +68,7 @@
 
     span {
       margin: 8px 0px;
+      line-height: 4.5vw;
       font-size: 2vw;
       color: #4c4c4c;
     }
@@ -96,8 +103,32 @@
 
     }
     .item4 {
-      margin-left:10px;
-      margin-right:10px;
+      margin-left:5px;
+      margin-right:5px;
+      .dtype{
+        padding: 1px;
+        border-radius: 3px;
+        background-color: #61aedb;
+        color: white;
+        position: relative;
+      }
+      .stype{
+        padding: 1px;
+        border-radius: 3px;
+        background-color: #fa6b86;
+        color: white;
+      }
+
+      .dtype1{
+        position: relative;
+        top:1vw;
+        height: 4vw;
+      }
+      .stype1{
+        position: relative;
+        top:1vw;
+        height: 4vw;
+      }
     }
     .baifenbi {
       margin-top: 10px;
