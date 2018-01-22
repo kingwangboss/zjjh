@@ -110,7 +110,6 @@
         border-radius: 3px;
         background-color: #61aedb;
         color: white;
-        position: relative;
       }
       .stype{
         padding: 1px;

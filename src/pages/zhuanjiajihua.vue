@@ -2,10 +2,7 @@
   <div class="container">
       <m-header :title="title"></m-header>
       <div class="line"></div>
-      <zhuanjiajihuacell class="cell"></zhuanjiajihuacell>
-      <zhuanjiajihuacell class="cell"></zhuanjiajihuacell>
-      <zhuanjiajihuacell class="cell"></zhuanjiajihuacell>
-      <zhuanjiajihuacell class="cell"></zhuanjiajihuacell>
+      <zhuanjiajihuacell></zhuanjiajihuacell>
       <div class="line"></div>
   </div>
 </template>
@@ -19,9 +16,7 @@
 .container{
     background-color: #f8f8f8;
 }
-.cell {
-    margin: 15px 15px 15px 15px;
-}
+
 </style>
 
 <script>
