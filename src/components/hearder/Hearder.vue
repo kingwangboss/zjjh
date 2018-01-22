@@ -11,6 +11,14 @@
                 <span v-if="title.setting" class="right" @click="setting">
                     <img src="../../assets/setting.png" alt="设置" />
                 </span>
+
+                <span v-if="title.showBack" class="left" @click="back">
+                    <img src="../../assets/back.png" alt="返回" />
+                </span>
+
+                <span v-if="title.shousuo" class="right" @click="shousuo">
+                    <img src="../../assets/zhuanjiajihua/shousuo.png" alt="">
+                </span>
                 
 
             </div>
@@ -59,6 +67,15 @@
           vertical-align: middle;
         }
       }
+      .left{
+        position: absolute;
+        left: 20px;
+        img {
+          width: 15px;
+          height: 25px;
+          vertical-align: middle;
+        }
+      }
     }
   }
 }
@@ -82,6 +99,12 @@ export default {
     },
     setting(){
       alert('setting');
+    },
+    back() {
+      this.$router.go(-1);
+    },
+    shousuo(){
+      // this.$router.push()
     }
   }
 };

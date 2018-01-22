@@ -8,19 +8,19 @@
         </div>
 
         <div class="middle">
-          <div class="cell">
+          <div class="cell" @click="mianfeijihua">
             <img src="../assets/freeplan.png" alt="">
             <span>免费计划</span>
           </div>
-          <div class="cell">
+          <div class="cell" @click="zhuanjiajihua">
             <img src="../assets/zhuanjiajihua.png" alt="">
             <span>专家计划</span>
           </div>
-          <div class="cell">
+          <div class="cell" @click="wodejihua">
             <img src="../assets/wodejihua.png" alt="">
             <span>我的计划</span>
           </div>
-          <div class="cell">
+          <div class="cell" @click="ruanjianbaoku">
             <img src="../assets/ruanjianbaoku.png" alt="">
             <span>软件宝库</span>
           </div>
@@ -266,6 +266,18 @@ export default {
         .catch(error => {
           console.log(error);
         });
+    },
+    mianfeijihua(){
+      
+    },
+    zhuanjiajihua(){
+      this.$router.push('/zhuanjiajihua')
+    },
+    wodejihua(){
+
+    },
+    ruanjianbaoku(){
+
     }
   },
   beforeMount() {},
