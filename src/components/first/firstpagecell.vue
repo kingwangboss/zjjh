@@ -1,11 +1,11 @@
 <template>
   <div class="container">
       <div class="cell" v-for="(cell,index) in celldata.Data">
-          <div v-if="cell.DSType === 0" class="line1"></div>
-          <div v-else-if="cell.DSType === 1" class="line2"></div>
+          <div v-if="cell.DsType === 0" class="line1"></div>
+          <div v-else-if="cell.DsType === 1" class="line2"></div>
 
-          <span v-if="cell.DSType === 0" class="item1d">{{cell.Name}}</span>
-          <span v-else-if="cell.DSType === 1" class="item1s">{{cell.Name}}</span>
+          <span v-if="cell.DsType === 0" class="item1d">{{cell.Name}}</span>
+          <span v-else-if="cell.DsType === 1" class="item1s">{{cell.Name}}</span>
 
           <div class="dashedline"></div>
           <span class="item2">{{cell.PlanSection}}</span>

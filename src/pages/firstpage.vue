@@ -32,16 +32,16 @@
           <div class="item1">
             <div class="line"></div>
             <span class="title">
-              王者计划
+              {{PlanData.PlanName}}
             </span>
           </div>
           <div class="item2">
             <img src="../assets/fenxiang.png" alt="">
             <span>分享</span>
           </div>
-          <div class="item2">
+          <div class="item2" @click="dianzan">
             <img src="../assets/dianzan.png" alt="">
-            <span>评论</span>
+            <span>点赞</span>
           </div>
         </div>
 
@@ -146,8 +146,8 @@ export default {
       kjData: "",
       nextTime: "",
       flag: false,
-      PlanData:'',
-      cellflag:false,
+      PlanData: "",
+      cellflag: false
     };
   },
   components: {
@@ -180,9 +180,9 @@ export default {
             clearInterval(run);
             this.getkjData();
             this.getcelldata();
-            console.log('yes');
+            console.log("yes");
           } else {
-            console.log("no")
+            console.log("no");
           }
         })
         .catch(error => {
@@ -244,15 +244,16 @@ export default {
       // 请求数据
       let tokenCode = localStorage.tokenCode;
       let signStr =
-        "Action=GetPlanDatas2&AutoOpt=0" +
+        "Action=GetLotteryFreePlanInfo&PlanID=750" +
         "&SID=" +
         localStorage.sid +
         "&Token=" +
         localStorage.Token +
         tokenCode;
       let data = new FormData();
-      data.append("Action", "GetPlanDatas2");
-      data.append("AutoOpt", "0");
+      data.append("Action", "GetLotteryFreePlanInfo");
+      data.append("PlanID", "750");
+      // data.append("AutoOpt", "0");
       data.append("SID", localStorage.sid);
       data.append("Token", localStorage.Token);
       data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());
@@ -261,24 +262,43 @@ export default {
         .then(res => {
           this.PlanData = res.data.Data;
           this.cellflag = true;
-          
         })
         .catch(error => {
           console.log(error);
         });
     },
-    mianfeijihua(){
-      
-    },
-    zhuanjiajihua(){
-      this.$router.push('/zhuanjiajihua')
-    },
-    wodejihua(){
+    dianzan() {
+      // 请求数据
+      let tokenCode = localStorage.tokenCode;
+      let signStr =
+        "Action=UpdateHighOpinion&PlanID=750" +
+        "&SID=" +
+        localStorage.sid +
+        "&Token=" +
+        localStorage.Token +
+        tokenCode;
+      let data = new FormData();
+      data.append("Action", "UpdateHighOpinion");
+      data.append("PlanID", "750");
+      data.append("SID", localStorage.sid);
+      data.append("Token", localStorage.Token);
+      data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());
+      this.$http
+        .post(localStorage.SiteUrl, data)
+        .then(res => {
 
+          console.log(res.data.Data)
+        })
+        .catch(error => {
+          console.log(error);
+        });
     },
-    ruanjianbaoku(){
-
-    }
+    mianfeijihua() {},
+    zhuanjiajihua() {
+      this.$router.push("/zhuanjiajihua");
+    },
+    wodejihua() {},
+    ruanjianbaoku() {}
   },
   beforeMount() {},
   mounted() {

@@ -17,8 +17,8 @@ export default {
         text: "登陆"
       },
       user: {
-        name: "kingwang2",
-        pwd: "123456",
+        name: "xh1",
+        pwd: "112233",
         sid: "1"
       }
     };
@@ -32,15 +32,15 @@ export default {
       let signStr =
         this.user.sid +
         this.user.name +
-        "4ZYZJ1.0" +
+        this.$global.AppType + this.$global.AppCode + "1.0" +
         this.$sha256.sha256(this.user.pwd).toUpperCase();
 
       let data = new FormData();
       data.append("Action", "Login");
       data.append("SID", this.user.sid);
       data.append("Account", this.user.name);
-      data.append("AppType", "4");
-      data.append("AppCode", "ZYZJ");
+      data.append("AppType", this.$global.AppType);
+      data.append("AppCode", this.$global.AppCode);
       data.append("AppVersion", "1.0");
       data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());
 
