@@ -179,7 +179,8 @@ export default {
           if (res.data.Data.NewLottery.NextPeriodTime > 0) {
             clearInterval(run);
             this.getkjData();
-            this.getcelldata();
+            // this.getcelldata();
+            this.getfreecelldata();
             console.log("yes");
           } else {
             console.log("no");
@@ -235,6 +236,33 @@ export default {
               }, 5000);
             }
           }
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    getfreecelldata(){
+      // 请求数据
+      let tokenCode = localStorage.tokenCode;
+      let signStr =
+        "Action=GetIndexPlanInfo&PlanType=1" +
+        "&SID=" +
+        localStorage.sid +
+        "&Token=" +
+        localStorage.Token +
+        tokenCode;
+      let data = new FormData();
+      data.append("Action", "GetIndexPlanInfo");
+      data.append("PlanType", "1");
+      // data.append("AutoOpt", "0");
+      data.append("SID", localStorage.sid);
+      data.append("Token", localStorage.Token);
+      data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());
+      this.$http
+        .post(localStorage.SiteUrl, data)
+        .then(res => {
+          this.PlanData = res.data.Data;
+          this.cellflag = true;
         })
         .catch(error => {
           console.log(error);
@@ -303,7 +331,8 @@ export default {
   beforeMount() {},
   mounted() {
     this.getkjData();
-    this.getcelldata();
+    // this.getcelldata();
+    this.getfreecelldata();
   },
 
   computed: {},

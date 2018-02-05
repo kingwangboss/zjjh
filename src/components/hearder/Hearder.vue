@@ -5,7 +5,7 @@
                 
                 <!-- <span class="title">{{title.text}}</span> -->
                 <span class="title">{{title.text}}
-                  <img v-if="title.img" class="img1" src="../../assets/genhuan.png" alt="kkk" @click="fun1"/>
+                  <img v-if="title.img" class="img1" src="../../assets/genhuan.png" alt="kkk" @click="qhCZ"/>
                 </span>
 
                 <span v-if="title.setting" class="right" @click="setting">
@@ -67,7 +67,7 @@
           vertical-align: middle;
         }
       }
-      .left{
+      .left {
         position: absolute;
         left: 20px;
         img {
@@ -94,16 +94,24 @@ export default {
     return {};
   },
   methods: {
-    fun1() {
-      alert(1);
+    qhCZ() {
+      let data = new FormData();
+      data.append("Action", "GetServiceList");
+      this.$http
+        .post(this.$global.url, data)
+        .then(res => {
+          console.log("getservicelist");
+          console.log(res);
+        })
+        .catch(error => {});
     },
-    setting(){
-      alert('setting');
+    setting() {
+      alert("setting");
     },
     back() {
       this.$router.go(-1);
     },
-    shousuo(){
+    shousuo() {
       // this.$router.push()
     }
   }
