@@ -10,10 +10,12 @@ import {post,fetch,patch,put} from './util/http'
 import axios from 'axios'
 import { Indicator } from 'mint-ui'
 import sha256 from "./util/sha256";
+import draw from "./util/draw";
 
 Vue.config.productionTip = false
 Vue.use(Mint);
 
+Vue.prototype.$draw = draw;
 Vue.prototype.$sha256 = sha256;
 Vue.prototype.$global = global;
 Vue.prototype.$show = Indicator;

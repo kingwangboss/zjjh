@@ -8,12 +8,17 @@ export default new Router({
     {
       path: '/firstpage',
       name: 'firstpage',
-      component: resolve => require(['@/pages/firstpage'],resolve)
+      component: resolve => require(['@/pages/firstpage1'],resolve)
     },
     {
       path: '/index',
       name: 'index',
       component: resolve => require(['@/pages/index'],resolve)
+    },
+    {
+      path: '/mianfeijihua',
+      name: 'mianfeijihua',
+      component: resolve => require(['@/pages/mianfeijihua'],resolve)
     },
     {
       path: '/zhuanjiajihua',
