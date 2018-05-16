@@ -206,7 +206,14 @@ export default {
             clearInterval(run);
             this.getkjData();
             // this.getcelldata();
-            this.getfreecelldata();
+            if (
+              typeof localStorage.PlanID == "undefined" ||
+              localStorage.PlanID == 0
+            ) {
+              this.getfreecelldata();
+            } else {
+              this.getcelldata();
+            }
             console.log("yes");
           } else {
             console.log("no");
@@ -315,8 +322,13 @@ export default {
       this.$http
         .post(localStorage.SiteUrl, data)
         .then(res => {
-          this.PlanData = res.data.Data;
-          this.cellflag = true;
+          if(res.data.Code == "Fail"){
+            this.getfreecelldata();
+            localStorage.removeItem("PlanID");
+          }else{
+            this.PlanData = res.data.Data;
+            this.cellflag = true;
+          }
         })
         .catch(error => {
           console.log(error);

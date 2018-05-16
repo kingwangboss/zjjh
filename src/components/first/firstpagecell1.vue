@@ -5,7 +5,7 @@
           <span class="leftd" v-if="cell.DsType === 0">{{cell.Name}}</span>
           <span v-else-if="cell.DsType === 1" class="lefts">{{cell.Name}}</span>
           <div class="center">
-            <div class="c_top">{{cell.PlanSection}} 第{{cell.EndIndex ? cell.EndIndex : 1}}期</div>
+            <div class="c_top">{{cell.PlanSection}} &nbsp 第{{cell.EndIndex ? cell.EndIndex : 1}}期</div>
             <div class="c_bottom_d" v-if="cell.DsType === 0">{{cell.GuessValue}}</div>
             <div class="c_bottom_s" v-else-if="cell.DsType === 1">{{cell.GuessValue}}</div>
           </div>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container" v-for="(item,index) in plandata">
+        <div class="container" v-for="(item,index) in plandata" @click="commit(item.ID)">
             <div class="top">
                 <div class="top-left">
                     <img v-if="index === 0" style="width:8vw;height:8vw;" src="../../assets/zhuanjiajihua/z1.png" alt="">
@@ -85,6 +85,17 @@ export default {
     this.plandata = this.planData;
     console.log("111111111")
     console.log(this.plandata);
+  },
+
+  methods: {
+    commit(id) {
+      this.$router.push({
+        path:"/zhuanjiajihualiebiao",
+        query: {
+          planid: id
+        },
+      })
+    }
   }
 };
 </script>
