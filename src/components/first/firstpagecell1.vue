@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" v-if="celldata.PlanType == 1">
       <div class="cell" v-for="(cell,index) in celldata.Data">
           <!-- {{cell.Name}} -->
           <span class="leftd" v-if="cell.DsType === 0">{{cell.Name}}</span>
@@ -16,6 +16,29 @@
           </div>
       </div>
   </div>
+
+  <div class="container" v-else-if="celldata.PlanType == 2">
+      <div class="cell" v-for="(cell,index) in celldata.Data" @click="cellClick(index)">
+          <!-- {{cell.Name}} -->
+          <span class="leftd" v-if="cell.DsType === 0">{{cell.Name}}</span>
+          <span v-else-if="cell.DsType === 1" class="lefts">{{cell.Name}}</span>
+          <div class="center">
+            <div class="c_top">{{cell.PlanSection}} &nbsp 第{{cell.EndIndex ? cell.EndIndex : 1}}期</div>
+            <div class="c_bottom_d" v-if="cell.DsType === 0">{{cell.GuessValue}}</div>
+            <div class="c_bottom_s" v-else-if="cell.DsType === 1">{{cell.GuessValue}}</div>
+          </div>
+          <div class="right">
+            <div class="time-graph">  
+              <canvas :id="index" style="width:15vw;height:15vw;" width="120" height="120"></canvas>  
+            </div>  
+          </div>
+      </div>
+  </div>
+  
+  <div v-else>
+
+  </div>
+  
 </template>
 
 
@@ -125,6 +148,9 @@ export default {
         return false;
       }
     },
+    cellClick(index){
+      alert(index);
+    }
   },
   watch: {
     plandata: function(now, old) {

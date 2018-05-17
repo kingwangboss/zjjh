@@ -37,7 +37,7 @@
                     {{PlanData.PlanName}}
                     </span>
                 </div>
-                <div class="right">
+                <div class="right" v-if="PlanData.PlanType === 2">
                   <div class="item2">
                       <img src="../assets/fenxiang.png" alt="">
                       <span>分享</span>
@@ -46,6 +46,9 @@
                       <img src="../assets/dianzan.png" alt="">
                       <span>点赞</span>
                   </div>
+                </div>
+                <div v-else>
+                  
                 </div>
             </div>
 
@@ -365,7 +368,9 @@ export default {
     zhuanjiajihua() {
       this.$router.push("/zhuanjiajihua");
     },
-    wodejihua() {},
+    wodejihua() {
+      this.$router.push("/wodejihua");
+    },
     ruanjianbaoku() {}
   },
   beforeMount() {},

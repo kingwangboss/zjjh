@@ -26,6 +26,11 @@ export default new Router({
       component: resolve => require(['@/pages/zhuanjiajihua'],resolve)
     },
     {
+      path: '/wodejihua',
+      name: 'wodejihua',
+      component: resolve => require(['@/pages/wodejihua'],resolve)
+    },
+    {
       path: '/zhuanjiajihualiebiao',
       name: 'zhuanjiajihualiebiao',
       component: resolve => require(['@/pages/zhuanjiajihualiebiao'],resolve)
