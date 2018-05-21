@@ -32,16 +32,18 @@
 
             <div class="bottom">
                 <div class="item1">
-                    <div class="line"></div>
+                    <!-- <div class="line"></div> -->
+                    <img v-if="PlanData.PlanType === 1" style="width:20px;height:20px;margin:5px 0 5px 5px;" src="../assets/freeplan.png" alt="">
+                    <img v-else-if="PlanData.PlanType === 2" style="width:20px;height:20px;margin:5px 0 5px 5px;" src="../assets/zhuanjiajihua.png" alt="">
                     <span class="title">
                     {{PlanData.PlanName}}
                     </span>
                 </div>
                 <div class="right" v-if="PlanData.PlanType === 2">
-                  <div class="item2">
+                  <!-- <div class="item2">
                       <img src="../assets/fenxiang.png" alt="">
                       <span>分享</span>
-                  </div>
+                  </div> -->
                   <div class="item2" @click="dianzan">
                       <img src="../assets/dianzan.png" alt="">
                       <span>点赞</span>
@@ -52,7 +54,8 @@
                 </div>
             </div>
 
-            <firstcell1 class="firstcell1" :plandata="PlanData" v-if="cellflag"></firstcell1>
+            <!-- <firstcell1 class="firstcell1" :plandata="PlanData" v-if="cellflag"></firstcell1> -->
+            <firstcell2 class="firstcell1" :plandata="PlanData" v-if="cellflag"></firstcell2>
         </div>
 
       </div>
@@ -121,7 +124,7 @@
     }
     .title {
       font-weight: 500;
-      margin-left: 10px;
+      margin-left: 5px;
     }
   }
   .right {
@@ -148,7 +151,7 @@
 }
 
 .firstcell1 {
-  background: white;
+  // background: white;
   display: flex;
   flex-direction: column;
 }
@@ -159,7 +162,8 @@
 import mHeader from "../components/hearder/Hearder";
 import sha256 from "../util/sha256";
 import kjview from "../components/kjview/kjview";
-import firstcell1 from "../components/first/firstpagecell1";
+// import firstcell1 from "../components/first/firstpagecell1";
+import firstcell2 from "../components/first/firstpagecell2";
 
 var tiemInterval;
 var run;
@@ -182,7 +186,8 @@ export default {
   components: {
     mHeader,
     kjview,
-    firstcell1
+    // firstcell1
+    firstcell2
   },
 
   methods: {
