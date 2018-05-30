@@ -28,10 +28,10 @@
                     <div class="item2" v-if="cell.EndIndex === 1" style="border: 1px solid rgb(58, 191, 60);background: rgb(58, 191, 60);">
                       {{cell.EndIndex ? cell.EndIndex : 1}}定
                     </div>
-                    <div class="item2" v-if="cell.EndIndex === 2" style="border: 1px solid rgb(248, 198, 65);background: rgb(248, 198, 65);">
+                    <div class="item2" v-else-if="cell.EndIndex === 2" style="border: 1px solid rgb(248, 198, 65);background: rgb(248, 198, 65);">
                       {{cell.EndIndex ? cell.EndIndex : 1}}定
                     </div>
-                    <div class="item2" v-if="cell.EndIndex === 3" style="border: 1px solid rgb(214, 49, 56);background: rgb(214, 49, 56);">
+                    <div class="item2" v-else style="border: 1px solid rgb(214, 49, 56);background: rgb(214, 49, 56);">
                       {{cell.EndIndex ? cell.EndIndex : 1}}定
                     </div>
                   </div>
@@ -39,10 +39,10 @@
                     <div class="item2" v-if="cell.EndIndex === 1" style="border: 1px solid rgb(58, 191, 60);background: rgb(58, 191, 60);">
                       {{cell.EndIndex ? cell.EndIndex : 1}}杀
                     </div>
-                    <div class="item2" v-if="cell.EndIndex === 2" style="border: 1px solid rgb(248, 198, 65);background: rgb(248, 198, 65);">
+                    <div class="item2" v-else-if="cell.EndIndex === 2" style="border: 1px solid rgb(248, 198, 65);background: rgb(248, 198, 65);">
                       {{cell.EndIndex ? cell.EndIndex : 1}}杀
                     </div>
-                    <div class="item2" v-if="cell.EndIndex === 3" style="border: 1px solid rgb(214, 49, 56);background: rgb(214, 49, 56);">
+                    <div class="item2" v-else style="border: 1px solid rgb(214, 49, 56);background: rgb(214, 49, 56);">
                       {{cell.EndIndex ? cell.EndIndex : 1}}杀
                     </div>
                   </div>
