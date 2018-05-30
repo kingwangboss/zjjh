@@ -43,6 +43,8 @@ axios.interceptors.response.use(
     console.log('拦截器 MsgType:' + response.data.MsgType)
     console.log('拦截器 Msg:' + response.data.Msg)
     console.log(response);
+    
+    
     if (localStorage.tab == 'lishi') {
 
     } else {
@@ -66,8 +68,14 @@ axios.interceptors.response.use(
           cancelButtonText: '知道了',
           callback: (action, instance, done) => {
             if (action === 'confirm') {
+              // router.push({
+              //   path: '/buy'
+              // })
               router.push({
-                path: '/buy'
+                path:"/zhuanjiajihualiebiao",
+                query: {
+                  planid: localStorage.ParentPlanID
+                },
               })
             } else {
 

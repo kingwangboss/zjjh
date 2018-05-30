@@ -82,19 +82,21 @@ export default {
       localStorage.PlanID = id;
       let tokenCode = localStorage.tokenCode;
       let signStr =
-        "Action=GetLotteryFreePlanInfo" +
+        "Action=GetLotteryFreePlanInfo&PlanID=" +
+        localStorage.PlanID +
+        "&PlanType=" + 
+        localStorage.PlanType +
         "&SID=" +
         localStorage.sid +
         "&Token=" +
         localStorage.Token +
-        "&PlanID=" +
-        id +
         tokenCode;
       let data = new FormData();
       data.append("Action", "GetLotteryFreePlanInfo");
+      data.append("PlanID", localStorage.PlanID);
+      data.append("PlanType", localStorage.PlanType);
       data.append("SID", localStorage.sid);
       data.append("Token", localStorage.Token);
-      data.append("PlanID", id);
       data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());
       this.$http
         .post(localStorage.SiteUrl, data)

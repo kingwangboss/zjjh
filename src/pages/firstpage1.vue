@@ -282,39 +282,14 @@ export default {
           console.log(error);
         });
     },
-    getfreecelldata() {
-      // 请求数据
-      let tokenCode = localStorage.tokenCode;
-      let signStr =
-        "Action=GetIndexPlanInfo&PlanType=1" +
-        "&SID=" +
-        localStorage.sid +
-        "&Token=" +
-        localStorage.Token +
-        tokenCode;
-      let data = new FormData();
-      data.append("Action", "GetIndexPlanInfo");
-      data.append("PlanType", "1");
-      // data.append("AutoOpt", "0");
-      data.append("SID", localStorage.sid);
-      data.append("Token", localStorage.Token);
-      data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());
-      this.$http
-        .post(localStorage.SiteUrl, data)
-        .then(res => {
-          this.PlanData = res.data.Data;
-          this.cellflag = true;
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    },
     getcelldata() {
       // 请求数据
       let tokenCode = localStorage.tokenCode;
       let signStr =
         "Action=GetLotteryFreePlanInfo&PlanID=" +
         localStorage.PlanID +
+        "&PlanType=" + 
+        localStorage.PlanType +
         "&SID=" +
         localStorage.sid +
         "&Token=" +
@@ -323,7 +298,7 @@ export default {
       let data = new FormData();
       data.append("Action", "GetLotteryFreePlanInfo");
       data.append("PlanID", localStorage.PlanID);
-      // data.append("AutoOpt", "0");
+      data.append("PlanType", localStorage.PlanType);
       data.append("SID", localStorage.sid);
       data.append("Token", localStorage.Token);
       data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());
@@ -331,10 +306,11 @@ export default {
         .post(localStorage.SiteUrl, data)
         .then(res => {
           if(res.data.Code == "Fail"){
-            this.getfreecelldata();
-            localStorage.removeItem("PlanID");
+            // localStorage.removeItem("PlanID");
           }else{
             this.PlanData = res.data.Data;
+            localStorage.PlanType = res.data.Data.PlanType;
+            localStorage.ParentPlanID = res.data.Data.ParentPlanID;
             this.cellflag = true;
           }
         })
@@ -382,11 +358,8 @@ export default {
   mounted() {
     this.getkjData();
 
-    if (typeof localStorage.PlanID == "undefined" || localStorage.PlanID == 0) {
-      this.getfreecelldata();
-    } else {
-      this.getcelldata();
-    }
+    
+    this.getcelldata();
   },
 
   computed: {},
