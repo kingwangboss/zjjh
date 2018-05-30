@@ -8,7 +8,7 @@ export default new Router({
     {
       path: '/firstpage',
       name: 'firstpage',
-      component: resolve => require(['@/pages/firstpage1'],resolve)
+      component: resolve => require(['@/pages/firstpage2'],resolve)
     },
     {
       path: '/index',

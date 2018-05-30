@@ -23,16 +23,17 @@
 <style lang="less" scoped>
 .kjview {
   width: 100%;
-  background: url(../../assets/jianbian.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  // background: url(../../assets/jianbian.png);
+  // background-repeat: no-repeat;
+  // background-size: 100% 100%;
+  background:rgb(214,49,56);
   display: flex;
   flex-direction: column;
   .top-top {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 2vw;
     margin-left: 5px;
     height: 30px;
     line-height: 30px;
@@ -48,13 +49,13 @@
     }
   }
   .top-middle {
-    margin: 5px 7px 5px 7px;
+    margin: 2vw 3vw 2vw 3vw;
   }
   .top-bottom {
     display: flex;
     flex-direction: row;
     height: 25px;
-    margin-bottom: 5px;
+    margin-bottom: 2vw;
     justify-content: space-between;
     .line {
       background-color: #ffffff;
@@ -63,7 +64,7 @@
       margin-top: 12px;
     }
     .label1 {
-      color: #ffffff;
+      color: rgb(248, 198, 65);
       line-height: 25px;
       font-size: 3vw;
     }

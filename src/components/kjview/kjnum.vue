@@ -18,12 +18,12 @@
     border-radius: 30px;
     text-align: center;
     margin: 4px;
-    color: #f93342;
+    color: rgb(214,49,56)  ;
     font-weight: 600;
   }
   .kjnum1 {
     font-size: 4vw;
-    background: #6098f5;
+    background: rgb(0,204,255);
     line-height: 30px;
     width: 30px;
     border-radius: 30px;

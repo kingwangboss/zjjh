@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="background:rgb(242,242,242);width:100%;height:100%;">
       <m-header :title="title"></m-header>
       
       <div class="container">
@@ -9,43 +9,52 @@
 
         <div class="middle">
           <div class="cell" @click="mianfeijihua">
-            <img src="../assets/freeplan.png" alt="">
+            <img src="../assets/freeplan1.png" alt="">
             <span>免费计划</span>
           </div>
           <div class="cell" @click="zhuanjiajihua">
-            <img src="../assets/zhuanjiajihua.png" alt="">
+            <img src="../assets/zhuanjiajihua1.png" alt="">
             <span>专家计划</span>
           </div>
           <div class="cell" @click="wodejihua">
-            <img src="../assets/wodejihua.png" alt="">
+            <img src="../assets/wodejihua1.png" alt="">
             <span>我的计划</span>
           </div>
           <div class="cell" @click="ruanjianbaoku">
-            <img src="../assets/ruanjianbaoku.png" alt="">
+            <img src="../assets/ruanjianbaoku1.png" alt="">
             <span>软件宝库</span>
           </div>
         </div>
 
-        <div class="line"></div>
 
-        <div class="bottom">
-          <div class="item1">
-            <div class="line"></div>
-            <span class="title">
-              {{PlanData.PlanName}}
-            </span>
-          </div>
-          <div class="item2">
-            <img src="../assets/fenxiang.png" alt="">
-            <span>分享</span>
-          </div>
-          <div class="item2" @click="dianzan">
-            <img src="../assets/dianzan.png" alt="">
-            <span>点赞</span>
-          </div>
+        <div class="bottom-container">
+
+            <div class="bottom">
+                <div class="item1">
+                    <!-- <div class="line"></div> -->
+                    <!-- <img v-if="PlanData.PlanType === 1" style="width:20px;height:20px;margin:5px 0 5px 5px;" src="../assets/freeplan.png" alt="">
+                    <img v-else-if="PlanData.PlanType === 2" style="width:20px;height:20px;margin:5px 0 5px 5px;" src="../assets/zhuanjiajihua.png" alt=""> -->
+                    <span style="margin-left:10px;" class="title">
+                    {{PlanData.PlanName}}
+                    </span>
+                </div>
+                <div class="right" v-if="PlanData.PlanType === 2">
+                  <!-- <div class="item2">
+                      <img src="../assets/fenxiang.png" alt="">
+                      <span>分享</span>
+                  </div> -->
+                  <div class="item2" @click="dianzan">
+                      <img src="../assets/dianzan.png" alt="">
+                      <span>点赞</span>
+                  </div>
+                </div>
+                <div v-else>
+                  
+                </div>
+            </div>
+
+            <firstcell3 class="firstcell1" :plandata="PlanData" v-if="cellflag"></firstcell3>
         </div>
-
-        <firstcell class="firstcell" :plandata="PlanData" v-if="cellflag"></firstcell>
 
       </div>
 
@@ -57,6 +66,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background: white;
   .cell {
     margin: 10px 16px 10px 16px;
     display: flex;
@@ -78,28 +88,40 @@
     }
   }
 }
-.line {
-  width: 100%;
-  height: 10px;
-  background-color: #f5f8f8;
+
+
+.bottom-container {
+  border-top: 2px solid rgb(242, 242, 242);
+  position: relative;
 }
 .bottom {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   height: 30px;
   line-height: 30px;
+  background: white;
+  padding: 5px 0px;
   .item1 {
     display: flex;
     flex-direction: row;
     .line {
-      width: 2px;
-      height: 100%;
+      width: 5px;
+      margin-top: 5px;
+      height: 20px;
       background-color: #f93342;
     }
     .title {
       font-weight: 500;
-      margin-left: 10px;
+      margin-left: 5px;
     }
+  }
+  .right {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 10px;
   }
   .item2 {
     margin-left: 20px;
@@ -117,19 +139,20 @@
   }
 }
 
-.firstcell {
-  margin: 5px 1.5% 5px 1.5%;
+.firstcell1 {
+  // background: white;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 </style>
 
 
 <script>
 import mHeader from "../components/hearder/Hearder";
+import sha256 from "../util/sha256";
 import kjview from "../components/kjview/kjview";
-import firstcell from "../components/first/firstpagecell";
+// import firstcell1 from "../components/first/firstpagecell1";
+import firstcell3 from "../components/first/firstpagecell3";
 
 var tiemInterval;
 var run;
@@ -152,7 +175,8 @@ export default {
   components: {
     mHeader,
     kjview,
-    firstcell
+    // firstcell1
+    firstcell3
   },
 
   methods: {
@@ -179,7 +203,14 @@ export default {
             clearInterval(run);
             this.getkjData();
             // this.getcelldata();
-            this.getfreecelldata();
+            if (
+              typeof localStorage.PlanID == "undefined" ||
+              localStorage.PlanID == 0
+            ) {
+              this.getfreecelldata();
+            } else {
+              this.getcelldata();
+            }
             console.log("yes");
           } else {
             console.log("no");
@@ -295,23 +326,28 @@ export default {
       this.$http
         .post(localStorage.SiteUrl, data)
         .then(res => {
-
-          console.log(res.data.Data)
+          console.log(res.data.Data);
         })
         .catch(error => {
           console.log(error);
         });
     },
-    mianfeijihua() {},
+    mianfeijihua() {
+      this.$router.push("/mianfeijihua");
+    },
     zhuanjiajihua() {
       this.$router.push("/zhuanjiajihua");
     },
-    wodejihua() {},
+    wodejihua() {
+      this.$router.push("/wodejihua");
+    },
     ruanjianbaoku() {}
   },
   beforeMount() {},
   mounted() {
     this.getkjData();
+
+    
     this.getcelldata();
   },
 
