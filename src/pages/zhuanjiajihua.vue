@@ -20,7 +20,7 @@
 
 <script>
 import mHeader from "../components/hearder/Hearder";
-import zhuanjiajihuacell from "../components/zhuanjiajihuacell/zhuanjiajihuacell";
+import zhuanjiajihuacell from "../components/zhuanjiajihuacell/zhuanjiajihuacell1";
 export default {
   data() {
     return {

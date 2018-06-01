@@ -58,7 +58,7 @@
     margin-bottom: 2vw;
     justify-content: space-between;
     .line {
-      background-color: #ffffff;
+      background-color: rgb(248, 198, 65);
       height: 1px;
       width: 27%;
       margin-top: 12px;

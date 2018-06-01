@@ -299,6 +299,7 @@ export default {
           }else{
             this.PlanData = res.data.Data;
             localStorage.PlanType = res.data.Data.PlanType;
+            localStorage.PlanID = res.data.Data.PlanID;
             localStorage.ParentPlanID = res.data.Data.ParentPlanID;
             this.cellflag = true;
           }

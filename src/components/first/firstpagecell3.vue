@@ -191,7 +191,11 @@ export default {
       }
     },
     cellClick(index) {
-      alert(index);
+      // alert(index);
+      localStorage.detailID = index;
+      this.$router.push({
+        path: "/planDetail"
+      });
     }
   },
   watch: {

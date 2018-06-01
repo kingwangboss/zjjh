@@ -11,9 +11,11 @@ import axios from 'axios'
 import { Indicator } from 'mint-ui'
 import sha256 from "./util/sha256";
 import draw from "./util/draw";
+import ElementUI from 'element-ui'
 
 Vue.config.productionTip = false
 Vue.use(Mint);
+Vue.use(ElementUI);
 
 Vue.prototype.$draw = draw;
 Vue.prototype.$sha256 = sha256;
