@@ -103,7 +103,7 @@ export default {
         colnum = this.numArr.length > colnum ? colnum : 10;
         var rownum = 10 / colnum; //行
         margin = 4.5; //间距
-        ojwidth = (this.screenWidth - 10  - 2 * margin * colnum) / colnum; //格子的宽
+        ojwidth = (this.screenWidth - 15  - 2 * margin * colnum) / colnum; //格子的宽
         return ojwidth;
       },
       // setter

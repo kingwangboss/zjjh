@@ -12,9 +12,9 @@ $--color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
 /* Colors
 -------------------------- */
 $--color-white: #fff !default;
-$--color-black: #000 !default;
+$--color-black: #fff !default;
 
-$--color-primary: #409EFF !default;
+$--color-primary: rgb(214,49,56) !default;
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
 $--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 79bbff */
@@ -40,7 +40,7 @@ $--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
 $--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
 $--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
 
-$--color-text-primary: #303133 !default;
+$--color-text-primary: #333 !default;
 $--color-text-regular: #606266 !default;
 $--color-text-secondary: #909399 !default;
 $--color-text-placeholder: #c0c4cc !default;

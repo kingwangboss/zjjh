@@ -3,27 +3,10 @@
 
         <m-header :title="title"></m-header>
 
+        <kjview :kjdata="kjData" :Time="nextTime" v-if="flag"></kjview>
 
         <el-tabs id="content" v-model="activeName" @tab-click="handleClick" style="color:black;">
-            <kjview :kjdata="kjData" :Time="nextTime" v-if="flag"></kjview>
-            
-            <el-tab-pane :label="item.PlanName" :name="index.toString()" :index="index.toString()" v-for="(item,index) in listData" :key="index">
-                <div class="bottom-cell" style="margin-right:110px;margin-top:-40px;">
-                    <div class="cell-top" style="height:28px;">
-                        <span style="margin-left:10px;margin-top:5px;font-size:13px;color:#878787">{{item.PlanDetails[0].split('|')[0]}}</span>
-                        <span style="margin-left:5px;margin-top:5px;font-size:13px; color:#CD0C16;">预</span>
-                        <span style="margin-left:5px;margin-top:5px;font-size:13px;color:#CD0C16;">{{item.PlanDetails[0].split('|')[1]}}</span>
-                    </div>
-                    
-                    <div class="cell-bottom" style="height:20px;">
-                        <span v-if="item.PlanDetails[0].split('|')[2]" class="cell-bottom-itme1">{{item.PlanDetails[0].split('|')[2]}}</span>
-                        <span style="line-height:20px;margin-left:5px;color:#6e6e6e;font-size:13px;">{{item.PlanDetails[0].split('|')[3]}}</span>
-                        <span v-if="item.PlanDetails[0].split('|')[3]" style="line-height:20px;color:#6e6e6e;margin-right:5px;font-size:13px;">期</span>
-                    </div>      
-                </div>
-
-                
-                 
+            <el-tab-pane :label="item.Name" :name="index.toString()" :index="index.toString()" v-for="(item,index) in listData" :key="index">
                 <!-- id控制 计划切换 -->
                 <div class="detail-top">
                     <div class="detail-top-content">
@@ -44,7 +27,7 @@
                     </div>
 
                     <!-- id控制 计划切换 -->
-                    <div class="detail-top" style="width:100%;border-top:0px;padding:0;">
+                    <div class="detail-top1" style="width:100%;border-top:0px;padding:0;">
                       <div  v-show="item.RightTimes" class="detail-top-content" v-for="(item1,index1) in item.RightTimes ? item.RightTimes.split(',') : 0" :key="index1" >
                         <div class="psview">第{{index1+1}}期中:</div>
                         <div class="psvalue">{{item1}}</div>
@@ -55,30 +38,52 @@
                     
                 </div>
 
-                <div class="line">
+                <!-- <div class="line">
 
-                </div>
+                </div> -->
 
                 <!-- cell -->
                 <div class="detail-bottom">
 
                     <div class="bottom-cell" v-for="(itemCell,indexCell) in item.PlanDetails" :key="itemCell">
-                        <div v-if="indexCell != 0">
+                        <div>
                             <div class="cell-top">
                                 <span style="margin-left:5px;margin-top:10px;font-size:13px;">{{itemCell.split('|')[0]}}</span>
-                                <span style="margin-left:5px;margin-top:10px;font-size:13px; color:#CD0C16;">预</span>
+                                <!-- <span style="margin-left:5px;margin-top:10px;font-size:13px; color:#CD0C16;">预</span> -->
+                                <div v-if="item.DsType === 0">
+                                  <div v-show="itemCell.split('|')[2] == 1" class="item2" style="border: 1px solid rgb(58, 191, 60);background: rgb(58, 191, 60);">
+                                    {{itemCell.split('|')[2]}}定
+                                  </div>
+                                  <div v-show="itemCell.split('|')[2] == 2" class="item2" style="border: 1px solid rgb(248, 198, 65);background: rgb(248, 198, 65);">
+                                    {{itemCell.split('|')[2]}}定
+                                  </div>
+                                  <div v-show="itemCell.split('|')[2] > 2" class="item2" style="border: 1px solid rgb(214, 49, 56);background: rgb(214, 49, 56);">
+                                    {{itemCell.split('|')[2]}}定
+                                  </div>
+                                </div>
+                                 <div v-else-if="item.DsType === 1">
+                                   <div v-show="itemCell.split('|')[2] == 1" class="item2" style="border: 1px solid rgb(58, 191, 60);background: rgb(58, 191, 60);">
+                                    {{itemCell.split('|')[2]}}杀
+                                  </div>
+                                  <div v-show="itemCell.split('|')[2] == 2" class="item2" style="border: 1px solid rgb(248, 198, 65);background: rgb(248, 198, 65);">
+                                    {{itemCell.split('|')[2]}}杀
+                                  </div>
+                                  <div v-show="itemCell.split('|')[2] > 2" class="item2" style="border: 1px solid rgb(214, 49, 56);background: rgb(214, 49, 56);">
+                                    {{itemCell.split('|')[2]}}杀
+                                  </div>
+                                 </div>
                                 <span style="margin-left:5px;margin-top:10px;font-size:13px;">{{itemCell.split('|')[1]}}</span>
                             </div>
 
 
                             <div class="cell-bottom">
-                                  &nbsp;
-                                <div v-if="itemCell.split('|')[2]" class="cell-bottom-itme1">{{itemCell.split('|')[2]}}</div>
+                                  <!-- &nbsp;
+                                <div v-if="itemCell.split('|')[2]" class="cell-bottom-itme1">{{itemCell.split('|')[2]}}</div> -->
                                 &nbsp;
-                                <span style="line-height:20px;font-size:12px;color: #6e6e6e;">{{itemCell.split('|')[3]}}</span>
-                                <span v-if="itemCell.split('|')[3]" style="font-size:12px;line-height:20px;color: #6e6e6e;">期</span>
+                                <span style="line-height:20px;font-size:12px;color: #333;">{{itemCell.split('|')[3]}}</span>
+                                <span v-if="itemCell.split('|')[3]" style="font-size:12px;line-height:20px;color: #333;">期</span>
                                 &nbsp;
-                                <span style="line-height:20px;font-size:12px; color:#007AFF">开</span>
+                                <span style="line-height:20px;font-size:12px; color:#007AFF" v-show="itemCell.split('|')[4]">开</span>
                                 &nbsp;
 
                                 <div style="text-align:left;margin-top:1px;">
@@ -111,15 +116,20 @@
 
 <style lang="less" scoped>
 .detail-top {
-  background: #f8e6e5;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-start;
-  border-bottom: 1px solid #efefef;
-  border-top: 1px solid #efefef;
+  border-bottom: 5px solid rgb(239, 239, 239);
+  border-top: 5px solid rgb(239, 239, 239);
   background: #fffadc;
   padding: 5px 5px 0px 5px;
+}
+.detail-top1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-start;
 }
 
 .line {
@@ -141,7 +151,7 @@
 }
 
 .psview {
-  color: #878787;
+  color: #333;
   font-size: 12px;
 }
 
@@ -202,8 +212,19 @@
   flex-direction: row;
   word-wrap: break-word;
   justify-content: flex-start;
-  color: #878787;
+  color: #333;
   // margin-top: 10px;
+  .item2 {
+    margin-right: 5px;
+    height: 14px;
+    line-height: 15px;
+    color: #fff;
+    border-radius: 14px;
+    padding: 0 5px;
+    margin-left: 5px;
+    margin-top: 7px;
+    font-size: 13px;
+  }
 }
 
 .cell-bottom {
@@ -212,9 +233,7 @@
   justify-content: flex-end;
   margin-top: 5px;
   padding-bottom: 5px;
-  //   border-bottom: 1px solid #d8d8d8;
   .cell-bottom-itme1 {
-    // background-image: url("../../static/images/quan.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 18px;
@@ -228,7 +247,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  border-bottom: 1px solid #efefef;
+  border-bottom: 5px solid rgb(239, 239, 239);
 }
 </style>
 
@@ -245,8 +264,7 @@ export default {
     return {
       title: {
         text: "计划详情",
-        showBack: true,
-        right: true
+        showBack: true
       },
       kjData: "",
       nextTime: "",
@@ -259,6 +277,14 @@ export default {
   },
   created() {},
   methods: {
+    jisuan(str){
+      console.log(str.split('|')[2])
+      if(str.split('|')[2]){
+        return str.split('|')[2]
+      }else{
+        return "1";
+      }
+    },
     handleClick(tab, event) {
       console.log(tab, event);
       console.log(tab.index);
@@ -372,14 +398,14 @@ export default {
         .post(localStorage.SiteUrl, data)
         .then(res => {
           console.log(res);
-          this.listData = res.data.Data;
-          this.maxactiveName = this.listData.data.length.toString();
-          // for (var i = 0; i < this.listData.length; i++) {
-          //   this.listData[i].PlanDetails = this.listData[
-          //     i
-          //   ].PlanDetails.reverse();
-          // }
-          // this.activeName = localStorage.detailID;
+          this.listData = res.data.Data.Data;
+          this.maxactiveName = this.listData.length.toString();
+          for (var i = 0; i < this.listData.length; i++) {
+            this.listData[i].PlanDetails = this.listData[
+              i
+            ].PlanDetails.reverse();
+          }
+          this.activeName = localStorage.detailID;
         })
         .catch(error => {
           console.log(error);
@@ -408,7 +434,9 @@ export default {
     console.log("beforeDestroy");
     clearInterval(tiemInterval);
   },
-  computed: {},
+  computed: {
+    
+  },
   components: {
     mHeader,
     kjview

@@ -12,6 +12,7 @@ import { Indicator } from 'mint-ui'
 import sha256 from "./util/sha256";
 import draw from "./util/draw";
 import ElementUI from 'element-ui'
+import '../theme/index.css'
 
 Vue.config.productionTip = false
 Vue.use(Mint);
