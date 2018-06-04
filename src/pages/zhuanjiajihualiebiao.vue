@@ -18,6 +18,7 @@
               <span class="version">{{planData.Version}}</span>
             </div>
             <div class="right">
+              <span class="fenshu">{{planData.Score}}</span>
               <img style="width:4vw;" src="../assets/goumai/xx1.png" alt="">
               <img style="width:4vw;" src="../assets/goumai/xx1.png" alt="">
               <img style="width:4vw;" src="../assets/goumai/xx1.png" alt="">
@@ -41,13 +42,27 @@
             <span>/</span>
             <span style="color:rgb(214,49,56)">{{shijian(2)}}</span>
           </div>
-          <div class="item2">
+          <div class="item2" v-if="planData.BuySign === 1">
             <span>可购买天数:</span>
-            <span style="color:rgb(214,49,56)">20</span>
+            <span style="color:rgb(214,49,56)">{{planData.AllowBuyDays}}</span>
+            <span>天</span>
+          </div>
+          <div class="item2" v-else>
+            <span>可续费天数:</span>
+            <span style="color:rgb(214,49,56)">{{planData.AllowBuyDays}}</span>
             <span>天</span>
           </div>
           
-          <div class="item1" v-show="planData.BuySign === 1 || planData.BuySign === 2">
+          <div v-if="planData.BuySign === 1" class="item1" v-show="planData.BuySign === 1 || planData.BuySign === 2">
+            <span class="left">购买天数:</span>
+            <div class="right2">
+              <img class="btn" src="../assets/goumai/jian1.png" alt="" @click="jian">
+              <el-input v-model="inputnum" class="input" type="number" size="mini" @change="changenum"></el-input>
+              <img class="btn" src="../assets/goumai/jia1.png" alt="" @click="jia">
+            </div>
+          </div>
+
+          <div v-else class="item1" v-show="planData.BuySign === 1 || planData.BuySign === 2">
             <span class="left">续费天数:</span>
             <div class="right2">
               <img class="btn" src="../assets/goumai/jian1.png" alt="" @click="jian">
@@ -55,6 +70,7 @@
               <img class="btn" src="../assets/goumai/jia1.png" alt="" @click="jia">
             </div>
           </div>
+
         </div>
         <div class="line"></div>
       </div>
@@ -68,7 +84,7 @@
       </div>
 
       <div class="bottom-btnView1" v-else-if="planData.BuySign === 3">
-            <button class="bottom-btn2" style="background-color: rgb(214, 49, 56);border-color:rgba(0,0,0,0);color:#fff;">进入计划</button>
+            <button class="bottom-btn2" style="background-color: rgb(214, 49, 56);border-color:rgba(0,0,0,0);color:#fff;" @click="pushplan">进入计划</button>
       </div>
 
       <div class="bottom-btnView1" v-else></div>
@@ -139,6 +155,10 @@
       .right {
         align-self: flex-end;
         margin-right: 4.5vw;
+        .fenshu{
+          color: rgb(252, 125, 0);
+          font-size: 3.6vw;
+        }
       }
       .right2 {
         display: flex;
