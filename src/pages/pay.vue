@@ -125,7 +125,6 @@
 
 <script>
 import mHeader from "../components/hearder/Hearder";
-import sha256 from "../util/sha256";
 import { Toast, MessageBox } from "mint-ui";
 export default {
   data() {
@@ -156,56 +155,13 @@ export default {
 
         this.pay(this.isSelect);
 
-        // let data = new FormData();
-        // data.append("pid", this.pid);
-        // data.append("uid", localStorage.uid);
-        // data.append("paytype", 1);
-        // this.$http
-        //   .post("http://wz.cpnet.com/home/PayPost", data)
-        //   .then(res => {
-        //     // console.log(res);
-        //     if (res.data.result.success === true) {
-        //       this.url = res.data.result.data;
-        //       window.location.href = this.url;
-        //     } else {
-        //       Toast({
-        //         message: res.data.result.message,
-        //         position: "bottom",
-        //         duration: 2000
-        //       });
-        //     }
-        //   })
-        //   .catch(error => {
-        //     console.log(error);
-        //   });
+      
       } else if (this.isSelect == 2) {
         console.log("zhifubao");
 
         this.pay(this.isSelect);
         
-        // let data = new FormData();
-        // data.append("pid", this.pid);
-        // data.append("uid", localStorage.uid);
-        // data.append("paytype", 2);
-        // this.$http
-        //   .post("http://wz.cpnet.com/home/PayPost", data)
-        //   .then(res => {
-        //     // console.log(res);
-        //     if (res.data.result.success === true) {
-        //       this.url = res.data.result.data;
-        //       window.location.href = this.url;
-              
-        //     } else {
-        //       Toast({
-        //         message: res.data.result.message,
-        //         position: "bottom",
-        //         duration: 2000
-        //       });
-        //     }
-        //   })
-        //   .catch(error => {
-        //     console.log(error);
-        //   });
+        
       } else if (this.isSelect == 3) {
         console.log("zizhu");
 
@@ -235,7 +191,7 @@ export default {
         data.append("PayType", isSelect);
         data.append("Days", this.tianshu);
         data.append("Token", localStorage.Token);
-        data.append("Sign", sha256.sha256(signStr).toUpperCase());
+        data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());
 
         this.$http
           .post(this.$global.url, data)

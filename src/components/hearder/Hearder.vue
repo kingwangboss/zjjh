@@ -101,7 +101,9 @@ export default {
       });
     },
     setting() {
-      alert("setting");
+      this.$router.push({
+        path: "/wo"
+      });
     },
     back() {
       this.$router.go(-1);

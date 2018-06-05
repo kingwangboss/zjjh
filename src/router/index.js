@@ -17,6 +17,11 @@ export default new Router({
       component: resolve => require(['@/pages/firstpage2'], resolve)
     },
     {
+      path: '/wo',
+      name: 'wo',
+      component: resolve => require(['@/pages/wo'], resolve),
+    },
+    {
       path: '/login',
       name: 'loginVC',
       component: resolve => require(['@/pages/login'], resolve)
@@ -70,6 +75,21 @@ export default new Router({
       path: '/pay',
       name: 'pay',
       component: resolve => require(['@/pages/pay'], resolve)
+    },
+    {
+      path: '/wo/about',
+      name: 'about',
+      component: resolve => require(['@/pages/wo/about'], resolve),
+    },
+    {
+      path: '/wo/feeback',
+      name: 'feeback',
+      component: resolve => require(['@/pages/wo/feeback'], resolve),
+    },
+    {
+      path: '/wo/XGpwd',
+      name: 'XGpwd',
+      component: resolve => require(['@/pages/wo/XGpwd'], resolve),
     },
   ]
 })
