@@ -26,7 +26,7 @@
   // background: url(../../assets/jianbian.png);
   // background-repeat: no-repeat;
   // background-size: 100% 100%;
-  background:rgb(214,49,56);
+  background:rgb(145, 7, 95);
   display: flex;
   flex-direction: column;
   .top-top {

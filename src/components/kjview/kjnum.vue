@@ -18,7 +18,7 @@
     border-radius: 30px;
     text-align: center;
     margin: 4px;
-    color: rgb(214,49,56)  ;
+    color: rgb(145, 7, 95)  ;
     font-weight: 600;
   }
   .kjnum1 {

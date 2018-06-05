@@ -76,15 +76,15 @@
       </div>
 
       <div class="bottom-btnView1" v-if="planData.BuySign === 1">
-            <button class="bottom-btn2" style="background-color: rgb(214, 49, 56);border-color:rgba(0,0,0,0);color:#fff;" @click="buy">立即购买</button>
+            <button class="bottom-btn2" style="background-color: rgb(145, 7, 95);border-color:rgba(0,0,0,0);color:#fff;" @click="buy">立即购买</button>
       </div>
       <div class="bottom-btnView1" v-else-if="planData.BuySign === 2">
             <button class="bottom-btn1" style="background-color: rgb(248, 198, 65);border-color:rgba(0,0,0,0);color:#fff;" @click="buy">继续续费</button>
-            <button class="bottom-btn1" style="background-color: rgb(214, 49, 56);border-color:rgba(0,0,0,0);color:#fff;" @click="pushplan">进入计划</button>
+            <button class="bottom-btn1" style="background-color: rgb(145, 7, 95);border-color:rgba(0,0,0,0);color:#fff;" @click="pushplan">进入计划</button>
       </div>
 
       <div class="bottom-btnView1" v-else-if="planData.BuySign === 3">
-            <button class="bottom-btn2" style="background-color: rgb(214, 49, 56);border-color:rgba(0,0,0,0);color:#fff;" @click="pushplan">进入计划</button>
+            <button class="bottom-btn2" style="background-color: rgb(145, 7, 95);border-color:rgba(0,0,0,0);color:#fff;" @click="pushplan">进入计划</button>
       </div>
 
       <div class="bottom-btnView1" v-else></div>
@@ -107,6 +107,7 @@
 .container {
   display: flex;
   flex-direction: column;
+  margin-bottom: 10vw;
   .top {
     margin: 2vw 1vw 2vw 1vw;
     flex-direction: column;
@@ -117,7 +118,7 @@
       margin-top: 2vw;
       padding: 1.5vw 2vw 1.5vw 2vw;
       font-size: 3vw;
-      color: rgb(214, 49, 56);
+      color: rgb(145, 7, 95);
       border-radius: 1vw;
       border: 1px solid #c4c4c4;
     }
@@ -134,6 +135,7 @@
       border-bottom: 1px solid rgb(239, 239, 239);
       display: flex;
       justify-content: space-between;
+      font-size: 4vw;
       .left {
         padding-left: 10px;
         display: flex;
@@ -171,7 +173,7 @@
         }
         .input {
           width: 12vw;
-          background: rgb(243, 243, 243);
+          // background: rgb(243, 243, 243);
           font-size: 3vw;
           outline: none;
         }
@@ -184,6 +186,7 @@
       display: flex;
       justify-content: flex-start;
       padding-left: 10px;
+      font-size: 4vw;
     }
     .item3 {
       height: 10vw;

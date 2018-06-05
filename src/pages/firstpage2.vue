@@ -161,7 +161,7 @@ export default {
   data() {
     return {
       title: {
-        text: "时时彩",
+        text: localStorage.czname,
         setting: true,
         img: true
       },
