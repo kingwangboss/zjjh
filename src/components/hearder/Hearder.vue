@@ -37,7 +37,7 @@
     height: 44px;
     // background-color: rgb(219, 60, 62);
     // background: url(../../assets/jianbian.png);
-    background:rgb(145, 7, 95);
+    background: rgb(145, 7, 95);
     line-height: 44px;
     text-align: center;
     .title-wrapper {
@@ -96,15 +96,9 @@ export default {
   },
   methods: {
     qhCZ() {
-      let data = new FormData();
-      data.append("Action", "GetServiceList");
-      this.$http
-        .post(this.$global.url, data)
-        .then(res => {
-          console.log("getservicelist");
-          console.log(res);
-        })
-        .catch(error => {});
+      this.$router.push({
+        path: "/XZcaizhong"
+      });
     },
     setting() {
       alert("setting");

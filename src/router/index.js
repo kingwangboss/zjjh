@@ -6,6 +6,12 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      name: 'isNeedLogin',
+      //   component: isNeedLogin
+      component: resolve => require(['@/pages/isNeedLogin'], resolve)
+    },
+    {
       path: '/firstpage',
       name: 'firstpage',
       component: resolve => require(['@/pages/firstpage2'], resolve)
@@ -29,6 +35,11 @@ export default new Router({
       path: '/lossPwd2',
       name: 'lossPwd2',
       component: resolve => require(['@/pages/lossPwd2'], resolve)
+    },
+    {
+      path: '/XZcaizhong',
+      name: 'XZcaizhong',
+      component: resolve => require(['@/pages/XZcaizhong'], resolve),
     },
     {
       path: '/mianfeijihua',
