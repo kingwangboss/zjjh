@@ -78,8 +78,8 @@
     width: 100%;
     height: 100%;
     img {
-      height: 70%;
-      width: 70%;
+      max-height: 70%;
+      max-width: 70%;
     }
     span {
       margin-top: 8px;

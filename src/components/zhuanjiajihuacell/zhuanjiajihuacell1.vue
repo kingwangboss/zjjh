@@ -49,6 +49,7 @@
     .top-left {
       display: flex;
       justify-content: flex-start;
+      align-items:baseline;
     }
     .top-right {
       align-self: flex-end;

@@ -17,7 +17,7 @@
     width: 30px;
     border-radius: 30px;
     text-align: center;
-    margin: 4px;
+    margin: 5px;
     color: rgb(145, 7, 95)  ;
     font-weight: 600;
   }
@@ -48,7 +48,7 @@ export default {
     return {
       numArr: "",
       // width: 100,
-      screenWidth: document.body.clientWidth // 这里是给到了一个默认值 （这个很重要）
+      screenWidth: document.body.clientWidth -10  // 这里是给到了一个默认值 （这个很重要）
     };
   },
   methods: {
@@ -68,7 +68,9 @@ export default {
     window.onresize = () => {
       return (() => {
         window.screenWidth = document.body.clientWidth;
+        
         that.screenWidth = window.screenWidth;
+        
       })();
     };
   },
@@ -103,7 +105,7 @@ export default {
         colnum = this.numArr.length > colnum ? colnum : 10;
         var rownum = 10 / colnum; //行
         margin = 4.5; //间距
-        ojwidth = (this.screenWidth - 15  - 2 * margin * colnum) / colnum; //格子的宽
+        ojwidth = (this.screenWidth - 10  - 2 * margin * colnum) / colnum; //格子的宽
         return ojwidth;
       },
       // setter

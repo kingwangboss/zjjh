@@ -141,6 +141,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        align-items:baseline;
         .img {
           height: 3vw;
         }

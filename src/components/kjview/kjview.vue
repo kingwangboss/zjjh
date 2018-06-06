@@ -49,7 +49,7 @@
     }
   }
   .top-middle {
-    margin: 2vw 3vw 2vw 3vw;
+    margin: 2vw 0vw 2vw 0vw;
   }
   .top-bottom {
     display: flex;

@@ -12,6 +12,18 @@
                     <div style="margin-top:15px;color:#999999;font-size:4vw;margin-left:5px;">{{item.Version}}</div>
                 
                 </div>
+
+                <div class="top-right">
+                    <img style="width:4vw;" src="../../assets/zhuanjiajihua/lx.png" alt="">
+                    <img style="width:4vw;" src="../../assets/zhuanjiajihua/lx.png" alt="">
+                    <img style="width:4vw;" src="../../assets/zhuanjiajihua/lx.png" alt="">
+                    <img style="width:4vw;" src="../../assets/zhuanjiajihua/lx.png" alt="">
+                    <img v-if="0 <= item.HighOpinion && item.HighOpinion < 5" style="width:4vw;" src="../../assets/zhuanjiajihua/bx.png" alt="">
+                    <img v-else-if="5 <= item.HighOpinion && item.HighOpinion < 10" style="width:4vw;" src="../../assets/zhuanjiajihua/banx.png" alt="">
+                    <img v-else-if="10 <= item.HighOpinion" style="width:4vw;" src="../../assets/zhuanjiajihua/lx.png" alt="">
+                    <!-- <img style="width:4vw;" src="../../assets/zhuanjiajihua/bx.png" alt="">
+                    <img style="width:4vw;" src="../../assets/zhuanjiajihua/banx.png" alt=""> -->
+                </div>
                 
             </div>
 
@@ -39,6 +51,7 @@
     .top-left {
       display: flex;
       justify-content: flex-start;
+      align-items:baseline;
     }
     .top-right {
       align-self: flex-end;

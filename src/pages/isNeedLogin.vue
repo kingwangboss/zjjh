@@ -15,7 +15,13 @@ export default {
                 this.$router.push('/login')
             }
         } else {
-            this.$router.push('/error')
+            // this.$router.push('/error')
+            if (localStorage.sid && localStorage.Token && localStorage.tokenCode) {
+
+                this.$router.push('/firstpage')
+            } else {
+                this.$router.push('/login')
+            }
         }
 
 
