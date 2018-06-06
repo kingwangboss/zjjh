@@ -91,5 +91,11 @@ export default new Router({
       name: 'XGpwd',
       component: resolve => require(['@/pages/wo/XGpwd'], resolve),
     },
+    {
+      path: '/error',
+      name: 'error',
+      // component: error
+      component: resolve => require(['@/pages/error'], resolve),
+    },
   ]
 })
