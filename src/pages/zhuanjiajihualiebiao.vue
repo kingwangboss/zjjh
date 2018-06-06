@@ -84,10 +84,14 @@
       </div>
 
       <div class="bottom-btnView1" v-else-if="planData.BuySign === 3">
-            <button class="bottom-btn2" style="background-color: rgb(145, 7, 95);border-color:rgba(0,0,0,0);color:#fff;" @click="pushplan">进入计划</button>
+            <button class="bottom-btn1" style="background-color: #b3b3b3;border-color:rgba(0,0,0,0);color:#fff;">继续续费</button>
+            <button class="bottom-btn1" style="background-color: rgb(145, 7, 95);border-color:rgba(0,0,0,0);color:#fff;" @click="pushplan">进入计划</button>
       </div>
 
-      <div class="bottom-btnView1" v-else></div>
+      <div class="bottom-btnView1" v-else>
+            <button class="bottom-btn1" style="background-color: #b3b3b3;border-color:rgba(0,0,0,0);color:#fff;">继续续费</button>
+            <button class="bottom-btn1" style="background-color: #b3b3b3;border-color:rgba(0,0,0,0);color:#fff;">进入计划</button>
+      </div>
 
 
   </div>
@@ -141,7 +145,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        align-items:baseline;
+        align-items: baseline;
         .img {
           height: 3vw;
         }
@@ -158,7 +162,7 @@
       .right {
         align-self: flex-end;
         margin-right: 4.5vw;
-        .fenshu{
+        .fenshu {
           color: rgb(252, 125, 0);
           font-size: 3.6vw;
         }
@@ -316,7 +320,7 @@ export default {
         }
       });
     },
-    pushplan(){
+    pushplan() {
       localStorage.PlanID = this.id;
       this.$router.push({
         path: "/firstpage"

@@ -5,7 +5,7 @@
                 
                 <!-- <span class="title">{{title.text}}</span> -->
                 <span class="title">{{title.text}}
-                  <img v-if="title.img" class="img1" src="../../assets/genhuan.png" alt="kkk" @click="qhCZ"/>
+                  <img v-if="title.img" class="img1" src="../../assets/genhuan1.png" alt="kkk" @click="qhCZ"/>
                 </span>
 
                 <span v-if="title.setting" class="right" @click="setting">

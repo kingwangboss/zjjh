@@ -3,13 +3,13 @@
         <div class="container" v-for="(item,index) in plandata" @click="commit(item.ID)">
             <div class="top">
                 <div class="top-left">
-                    <img v-if="index === 0" style="width:8vw;height:8vw;" src="../../assets/zhuanjiajihua/z1.png" alt="">
+                    <!-- <img v-if="index === 0" style="width:8vw;height:8vw;" src="../../assets/zhuanjiajihua/z1.png" alt="">
                     <img v-else-if="index === 1" style="width:8vw;height:8vw;" src="../../assets/zhuanjiajihua/z2.png" alt="">
                     <img v-else-if="index === 2" style="width:8vw;height:8vw;" src="../../assets/zhuanjiajihua/z3.png" alt="">
-                    <img v-else style="width:5vw;height:5vw;margin:13px 3px 0px 10px;" src="../../assets/zhuanjiajihua/gj.png" alt="">
+                    <img v-else style="width:5vw;height:5vw;margin:13px 3px 0px 10px;" src="../../assets/zhuanjiajihua/gj.png" alt=""> -->
 
-                    <div style="margin-top:15px;color:rgb(145, 7, 95);font-weight: 500;font-size:5vw;">{{item.PlanName}}</div>
-                    <div style="margin-top:15px;color:#999999;font-size:4vw;margin-left:5px;">{{item.Version}}</div>
+                    <div style="margin-left:10px;margin-top:15px;color:rgb(145, 7, 95);font-weight: 500;font-size:5vw;">{{item.PlanName}}</div>
+                    <div style="margin-left:10px;margin-top:15px;color:#999999;font-size:4vw;margin-left:5px;">{{item.Version}}</div>
                 
                 </div>
                 
