@@ -9,8 +9,8 @@
             </div>
             <el-input class="input2" :rows="6" v-model="msg.content" placeholder="请输入反馈内容" type="textarea" @input="inputFuction"></el-input>
             <div>
-                <el-button v-if="disabled" :disabled="disabled" class="btnEnable" type="text" @click="btnClick">提交</el-button>
-                <el-button v-else :disabled="disabled" class="btnDefault" type="text" @click="btnClick">提交</el-button>
+                <el-button v-if="disabled" :disabled="disabled" class="btnEnable" type="primary" @click="btnClick">提交</el-button>
+                <el-button v-else :disabled="disabled" class="btnDefault" type="primary" @click="btnClick">提交</el-button>
             </div>
         </div>
     </div>
@@ -25,26 +25,26 @@
     height: 10px;
   }
   .input1 {
-      outline: none;
+    outline: none;
     margin: 10px 0px;
     height: 30px;
+    padding-left: 15px;
   }
   .btnDefault {
     margin-top: 30px;
-    width: 50%;
-    // background-image: url("../../../static/images/btnBG.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    color: white;
+    width: 80%;
+    border: 0;
+    color: #fff;
+    font-size: 18px;
+    background: rgb(253, 179, 9);
   }
-
   .btnEnable {
     margin-top: 30px;
-    width: 50%;
-    // background-image: url("../../../static/images/btnBG.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    color: gray;
+    width: 80%;
+    border: 0;
+    color: #fff;
+    font-size: 18px;
+    background: rgb(253, 218, 111);
   }
 }
 </style>

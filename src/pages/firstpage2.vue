@@ -312,7 +312,8 @@ export default {
       // 请求数据
       let tokenCode = localStorage.tokenCode;
       let signStr =
-        "Action=UpdateHighOpinion&PlanID=750" +
+        "Action=UpdateHighOpinion" +
+        "&PlanID=" + localStorage.PlanID + 
         "&SID=" +
         localStorage.sid +
         "&Token=" +
@@ -320,7 +321,7 @@ export default {
         tokenCode;
       let data = new FormData();
       data.append("Action", "UpdateHighOpinion");
-      data.append("PlanID", "750");
+      data.append("PlanID", localStorage.PlanID);
       data.append("SID", localStorage.sid);
       data.append("Token", localStorage.Token);
       data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());

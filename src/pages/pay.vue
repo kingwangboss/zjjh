@@ -112,9 +112,9 @@
   margin-top: 100px;
   width: 60%;
   height: 40px;
-  border-radius: 20px;
+  border-radius: 5px;
   line-height: 35px;
-  background-color: rgb(229, 87, 77);
+  background-color: rgb(253, 179, 9);
   border-color: rgba(0, 0, 0, 0);
   color: #fff;
   font-size: 16px;
