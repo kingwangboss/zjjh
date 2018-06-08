@@ -266,7 +266,7 @@ export default {
             let signStr = this.user.sid + this.user.name + this.$global.AppType + this.$global.AppCode + this.$global.AppVersion + this.$sha256.sha256(this.user.pwd).toUpperCase();
             console.log(signStr);
             let data = new FormData();
-            data.append('Action', 'Login');
+            data.append('Action', 'Login2');
             data.append('SID', this.user.sid);
             data.append('Account', this.user.name);
             data.append('AppType', this.$global.AppType);
@@ -291,7 +291,7 @@ export default {
                     localStorage.QQUrl = res.data.Data.QQUrl;
                     localStorage.tokenCode = sha256.sha256(res.data.Data.Token + localStorage.pwd).toUpperCase()
                     localStorage.OfficialUrl = res.data.Data.OfficialUrl;
-
+                    localStorage.FreePlanSiteUrl = res.data.Data.FreePlanSiteUrl;
                     localStorage.user_name = this.user.name;
                     localStorage.user_pwd = this.user.pwd;
                     this.$router.push({

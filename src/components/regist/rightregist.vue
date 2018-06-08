@@ -263,7 +263,7 @@ export default {
         var that = this;
 
         let data1 = new FormData();
-        data1.append("Action", "UserNameReg2");
+        data1.append("Action", "UserNameReg3");
         data1.append("AppVersion", this.$global.AppVersion);
         data1.append("SID", localStorage.sid);
         data1.append("UserName", that.user.name);
@@ -293,7 +293,7 @@ export default {
               localStorage.tokenCode = this.$sha256
                 .sha256(res.data.Data.Token + localStorage.pwd)
                 .toUpperCase();
-
+              localStorage.FreePlanSiteUrl = res.data.Data.FreePlanSiteUrl;
               localStorage.user_name = this.user.name;
               localStorage.user_pwd = this.user.newpwd1;
               that.$router.push({

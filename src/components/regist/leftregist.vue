@@ -263,7 +263,7 @@ export default {
       console.log(formData);
 
       let data = new FormData();
-      data.append("Action", "MobileReg");
+      data.append("Action", "MobileReg2");
       data.append("SID", localStorage.sid);
       data.append("AppVersion", this.$global.AppVersion);
       data.append("Mobile", this.mobile.num);
@@ -288,6 +288,7 @@ export default {
             localStorage.Username = res.data.Data.NickName;
             localStorage.Token = res.data.Data.Token;
             localStorage.PayType = res.data.Data.PayType;
+            localStorage.FreePlanSiteUrl = res.data.Data.FreePlanSiteUrl;
             localStorage.tokenCode = this.$sha256
               .sha256(
                 res.data.Data.Token +

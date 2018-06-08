@@ -194,7 +194,7 @@ export default {
         data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());
 
         this.$http
-          .post(this.$global.url, data)
+          .post(localStorage.FreePlanSiteUrl, data)
           .then(res => {
             this.url = res.data.Data.PayParamUrl;
             window.location.href = this.url;
@@ -240,7 +240,7 @@ export default {
       console.log(this.$sha256.sha256(signStr).toUpperCase())
 
       this.$http
-        .post(this.$global.url, data)
+        .post(localStorage.FreePlanSiteUrl, data)
         .then(res => {
           this.listData = res.data.Data;
           var arr = [];

@@ -146,7 +146,7 @@ export default {
           this.$global.AppVersion +
           localStorage.pwd;
         let data = new FormData();
-        data.append("Action", "Login");
+        data.append("Action", "Login2");
         data.append("SID", localStorage.sid);
         data.append("Account", localStorage.user_name);
         data.append("AppType", this.$global.AppType);
@@ -165,6 +165,7 @@ export default {
               localStorage.Username = res.data.Data.NickName;
               localStorage.Token = res.data.Data.Token;
               localStorage.PayType = res.data.Data.PayType;
+              localStorage.FreePlanSiteUrl = res.data.Data.FreePlanSiteUrl;
               localStorage.tokenCode = this.$sha256
                 .sha256(res.data.Data.Token + localStorage.pwd)
                 .toUpperCase();
