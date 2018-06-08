@@ -17,7 +17,7 @@
                 </span>
 
                 <span v-if="title.shousuo" class="right" @click="shousuo">
-                    <img src="../../assets/zhuanjiajihua/shousuo.png" alt="">
+                  搜索
                 </span>
                 
 
@@ -109,7 +109,7 @@ export default {
       this.$router.go(-1);
     },
     shousuo() {
-      // this.$router.push()
+      this.$router.push("/search");
     }
   }
 };

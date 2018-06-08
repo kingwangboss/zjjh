@@ -27,13 +27,14 @@ export default {
       title: {
         text: "专家计划",
         showBack: true,
+        shousuo:true,
       },
       planData:"",
     };
   },
   components: {
     mHeader,
-    zhuanjiajihuacell
+    zhuanjiajihuacell,
   },
   methods: {
     getData() {

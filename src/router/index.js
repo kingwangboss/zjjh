@@ -92,6 +92,11 @@ export default new Router({
       component: resolve => require(['@/pages/wo/XGpwd'], resolve),
     },
     {
+      path: '/search',
+      name: 'search',
+      component: resolve => require(['@/pages/search'], resolve),
+    },
+    {
       path: '/error',
       name: 'error',
       // component: error

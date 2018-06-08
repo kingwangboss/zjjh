@@ -11,7 +11,7 @@
         </div>
         <div class="line"></div>
         <div class="bottom">
-          <div class="item1">
+          <div class="item1" style="align-items: baseline;">
             <div class="left">
               <img class="img" src="../assets/goumai/huangguan.png" alt="">
               <span class="name">{{planData.PlanName}}</span>
@@ -145,7 +145,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        align-items: baseline;
+        // align-items: baseline;
         .img {
           height: 3vw;
         }
