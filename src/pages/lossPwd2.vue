@@ -1,10 +1,10 @@
 <template>
-  <div @touchmove.prevent>
+  <div>
     <m-header :title="title"></m-header>
 
     <div class="maincontainer">
       <div class="content">
-        <form @submit.prevent="submit">
+        <!-- <form @submit.prevent="submit"> -->
           <div>
             <div class="top">
                 <div class="div-bor1">
@@ -13,7 +13,7 @@
                 </div>
               <!-- <input type="text" disabled="disabled" style="color:#ccc;" class="input1" v-model="user.num1" maxlength="11" placeholder="请输入正确的手机号码" @input="inputFuction"> -->
             
-              <el-button style="margin-left:15px;width:100px;height:40px" class="btn" type="primary" @click="ResetPwdSMS">获取验证码</el-button>
+              <el-button style="margin-left:15px;width:100px;height:40px" class="btn" @click="ResetPwdSMS1">获取验证码</el-button>
             </div>
             <div class="bottom">
               <!-- <input class="input" v-model="user.verify" type="text" maxlength="20" placeholder="请输入验证码" @input="inputFuction">
@@ -35,10 +35,11 @@
                 </div>
               
             </div>
+            <el-button v-if="disabled" :disabled="disabled" class="btnEnable" type="primary">确认修改</el-button>
+            <el-button v-else :disabled="disabled" class="btnDefault" type="primary" @click="submit">确认修改</el-button>
           </div>
-          <el-button v-if="disabled" :disabled="disabled" class="btnEnable" type="primary" native-type="submit">确认修改</el-button>
-          <el-button v-else :disabled="disabled" class="btnDefault" type="primary" native-type="submit">确认修改</el-button>
-        </form>
+          
+        <!-- </form> -->
       </div>
     </div>
   </div>
@@ -254,7 +255,7 @@ export default {
         this.disabled = true;
       }
     },
-    ResetPwdSMS() {
+    ResetPwdSMS1() {
       let data = new FormData();
       data.append("Action", "GetVCode");
       data.append("SID", this.user.sid);

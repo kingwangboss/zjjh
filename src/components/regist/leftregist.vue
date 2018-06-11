@@ -1,6 +1,6 @@
 <template>
-    <div class="container" @touchmove.prevent>
-        <form @submit.prevent="submit">
+    <div class="container" >
+
         <div>
             <div class="div-bor">
                 <i class="icon-user"></i>
@@ -13,7 +13,7 @@
                 <i class="icon-verify"></i>
                 <input type="text" class="input1" v-model="mobile.verify" maxlength="11" placeholder="请输入验证码" @input="inputFuction"> 
             </div>
-            <el-button class="btn" @click="getVcode">获取验证码</el-button>
+            <el-button class="btn" type="text" @click="getVcode1">获取验证码</el-button>
             
             
           </div>
@@ -30,10 +30,11 @@
             
             
           </div>
+
+          <el-button v-if="disabled" :disabled="disabled" class="btnEnable" type="primary" >注册</el-button>
+          <el-button v-else :disabled="disabled" class="btnDefault" type="primary" @click="submit">注册</el-button>
+
         </div>
-        <el-button v-if="disabled" :disabled="disabled" class="btnEnable" type="primary" native-type="submit">注册</el-button>
-        <el-button v-else :disabled="disabled" class="btnDefault" type="primary" native-type="submit">注册</el-button>
-      </form>
     </div>
 </template>
 
@@ -54,9 +55,11 @@
   font-size: 13px;
 }
 .container {
-  padding-top: 10%;
-  padding-bottom: 50%;
-  background: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin-top: 60px;
   #bundle > .juzhong;
   .div-bor {
     position: relative;
@@ -167,6 +170,7 @@
     .btn {
       outline: none;
       margin-left: 15px;
+      // line-height: 40px;
       height: 40px;
       width: 100px;
       border-radius: 4px;
@@ -233,7 +237,7 @@ export default {
       }
     },
 
-    getVcode() {
+    getVcode1() {
       var that = this;
       let data = new FormData();
       data.append("Action", "GetVCode");

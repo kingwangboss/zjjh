@@ -71,12 +71,12 @@
   .img1 {
     margin: 15px 15px;
     height: 30px;
-    widows: 30px;
+    width: 30px;
   }
   .img2 {
     margin: 20px 20px;
     height: 20px;
-    widows: 20px;
+    width: 20px;
   }
   .title {
     margin: 10px 0px;

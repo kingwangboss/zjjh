@@ -86,7 +86,7 @@
                                 <span style="line-height:20px;font-size:12px; color:#007AFF" v-show="itemCell.split('|')[4]">开</span>
                                 &nbsp;
 
-                                <div style="text-align:left;margin-top:1px;">
+                                <div style="text-align:left;margin-top:1px;max-width:71%">
                                   <span style="font-size:12px; color:#007AFF;">{{itemCell.split('|')[4]}}</span>
                                 </div>
 

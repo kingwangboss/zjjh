@@ -177,7 +177,7 @@
           margin: 5px;
         }
         .input {
-          width: 12vw;
+          width: 14vw;
           // background: rgb(243, 243, 243);
           font-size: 3vw;
           outline: none;

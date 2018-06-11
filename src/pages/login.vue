@@ -78,8 +78,8 @@
         .topImg {
             width: 100px;
             height: 100px;
-            margin-top: 100px;
-            margin-bottom: 60px;
+            margin-top: 10%;
+            margin-bottom: 10%;
         }
         .div-bor {
             
