@@ -89,7 +89,6 @@
   }
 }
 
-
 .bottom-container {
   border-top: 2px solid rgb(242, 242, 242);
   position: relative;
@@ -277,7 +276,7 @@ export default {
       let signStr =
         "Action=GetLotteryFreePlanInfo&PlanID=" +
         localStorage.PlanID +
-        "&PlanType=" + 
+        "&PlanType=" +
         localStorage.PlanType +
         "&SID=" +
         localStorage.sid +
@@ -294,9 +293,9 @@ export default {
       this.$http
         .post(localStorage.SiteUrl, data)
         .then(res => {
-          if(res.data.Code == "Fail"){
+          if (res.data.Code == "Fail") {
             // localStorage.removeItem("PlanID");
-          }else{
+          } else {
             this.PlanData = res.data.Data;
             localStorage.PlanType = res.data.Data.PlanType;
             localStorage.PlanID = res.data.Data.PlanID;
@@ -313,7 +312,8 @@ export default {
       let tokenCode = localStorage.tokenCode;
       let signStr =
         "Action=UpdateHighOpinion" +
-        "&PlanID=" + localStorage.PlanID + 
+        "&PlanID=" +
+        localStorage.PlanID +
         "&SID=" +
         localStorage.sid +
         "&Token=" +
@@ -343,24 +343,25 @@ export default {
     wodejihua() {
       this.$router.push("/wodejihua");
     },
-    ruanjianbaoku() {}
+    ruanjianbaoku() {
+      // window.location.href = 'http://zjjhidx.yiwili.com/ad/';
+      this.$router.push("/ruanjianbaoku");
+    }
   },
   beforeMount() {
-    clearInterval(tiemInterval);
   },
-  beforeUpdata(){
-    clearInterval(tiemInterval);
+  beforeUpdata() {
   },
   mounted() {
     this.getkjData();
 
-    
     this.getcelldata();
   },
 
   computed: {},
   beforeDestroy() {
     clearInterval(tiemInterval);
+    clearInterval(run);
   }
 };
 </script>

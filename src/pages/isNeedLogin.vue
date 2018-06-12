@@ -17,17 +17,7 @@
   margin: 10vw auto;
   height: 150px;
   width: 250px;
-  background-image: url(../assets/loading.gif);
-  background-repeat: no-repeat;
-  background-position: 0px 0px;
-  background-size: 100% 100%;
-}
-.gif1 {
-  position: relative;
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  background-image: url(../assets/log.gif);
+  background-image: url(../assets/loading1.jpg);
   background-repeat: no-repeat;
   background-position: 0px 0px;
   background-size: 100% 100%;

@@ -29,7 +29,7 @@
             </div>
           </div>
           <div class="item2">
-            <span>价格:</span>
+            <span>计划价格:</span>
             <span style="color:rgb(214,49,56)">￥</span>
             <span style="color:rgb(214,49,56)">{{planData.Price}}</span>
             <span>/天</span>
@@ -43,18 +43,18 @@
             <span style="color:rgb(214,49,56)">{{shijian(2)}}</span>
           </div>
           <div class="item2" v-if="planData.BuySign === 1">
-            <span>可购买天数:</span>
+            <span>可买天数:</span>
             <span style="color:rgb(214,49,56)">{{planData.AllowBuyDays}}</span>
             <span>天</span>
           </div>
           <div class="item2" v-else>
-            <span>可续费天数:</span>
+            <span>可续天数:</span>
             <span style="color:rgb(214,49,56)">{{planData.AllowBuyDays}}</span>
             <span>天</span>
           </div>
           
           <div v-if="planData.BuySign === 1" class="item1" v-show="planData.BuySign === 1 || planData.BuySign === 2">
-            <span class="left">购买天数:</span>
+            <span style="margin-left:4vw" class="left">购买天数:</span>
             <div class="right2">
               <img class="btn" src="../assets/goumai/jian1.png" alt="" @click="jian">
               <el-input v-model="inputnum" class="input" type="number" size="mini" @change="changenum"></el-input>
@@ -63,7 +63,7 @@
           </div>
 
           <div v-else class="item1" v-show="planData.BuySign === 1 || planData.BuySign === 2">
-            <span class="left">续费天数:</span>
+            <span style="margin-left:4vw" class="left">续费天数:</span>
             <div class="right2">
               <img class="btn" src="../assets/goumai/jian1.png" alt="" @click="jian">
               <el-input v-model="inputnum" class="input" type="number" size="mini" @change="changenum"></el-input>
@@ -148,6 +148,7 @@
         // align-items: baseline;
         .img {
           height: 3vw;
+          width: 4vw;
         }
         .name {
           color: rgb(51, 51, 51);
@@ -192,6 +193,7 @@
       justify-content: flex-start;
       padding-left: 10px;
       font-size: 4vw;
+      margin-left: 4vw;
     }
     .item3 {
       height: 10vw;

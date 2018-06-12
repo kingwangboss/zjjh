@@ -92,6 +92,11 @@ export default new Router({
       component: resolve => require(['@/pages/wo/XGpwd'], resolve),
     },
     {
+      path: '/ruanjianbaoku',
+      name: 'ruanjianbaoku',
+      component: resolve => require(['@/pages/ruanjianbaoku'], resolve),
+    },
+    {
       path: '/search',
       name: 'search',
       component: resolve => require(['@/pages/search'], resolve),

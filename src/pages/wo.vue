@@ -10,9 +10,9 @@
 
     <div class="bottom">
       <div class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth +'px'}" @click="kefuClick">
-        <img src="../assets/me/zxkf.png" style="margin-top:50px;"></img>
+        <img src="../assets/me/zxkf.png" style="margin-top:30px;"></img>
         <span>在线客服</span>
-        <span style="font-size:2vw;margin-top:1vw;color:rgb(145, 7, 95)">QQ:{{qqcode}}</span>
+        <span style="font-size:2vw;margin-top:1vw;color:rgb(145, 7, 95)" v-show="qqcode != '' || qqcode === 'undefine'">QQ:{{qqcode}}</span>
       </div>
       
       <div class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth +'px'}" @click="XGpwdClick">
@@ -76,7 +76,7 @@
   justify-content: center;
   span {
     font-size: 4vw;
-    line-height: 20px;
+    line-height: 15px;
     position: relative;
     top: -15px;
   }

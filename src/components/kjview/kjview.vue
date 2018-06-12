@@ -1,7 +1,7 @@
 <template>
   <div class="kjview">
     <div class="top-top">
-        <div class="item1"></div>
+        <!-- <div class="item1"></div> -->
         <span class="qishu1">&nbsp;&nbsp;第{{KJData.NewLottery.CurrentPeriod}}期开奖&nbsp;&nbsp;{{KJData.NewLottery.CurrentOpenTime}}</span>
     </div>
     <kjnum class="top-middle" :data="kjnum"></kjnum>
@@ -60,7 +60,7 @@
     .line {
       background-color: rgb(248, 198, 65);
       height: 1px;
-      width: 27%;
+      width: 28%;
       margin-top: 12px;
     }
     .label1 {
