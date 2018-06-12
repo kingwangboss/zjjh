@@ -10,8 +10,9 @@
 
     <div class="bottom">
       <div class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth +'px'}" @click="kefuClick">
-        <img src="../assets/me/zxkf.png" style="margin-top:30px;"></img>
+        <img src="../assets/me/zxkf.png" style="margin-top:50px;"></img>
         <span>在线客服</span>
+        <span style="font-size:2vw;margin-top:1vw;color:rgb(145, 7, 95)">QQ:{{qqcode}}</span>
       </div>
       
       <div class="bottom-cell" :style="{width:ojwidth+'px',height:ojwidth +'px'}" @click="XGpwdClick">
@@ -77,7 +78,7 @@
     font-size: 4vw;
     line-height: 20px;
     position: relative;
-    top: -20px;
+    top: -15px;
   }
 }
 
@@ -112,7 +113,8 @@ export default {
       },
       screenWidth: document.body.clientWidth,
       nickname: localStorage.Username,
-      paytype: localStorage.PayType
+      paytype: localStorage.PayType,
+      qqcode:localStorage.QQCode,
     };
   },
   components: {

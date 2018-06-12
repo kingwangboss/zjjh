@@ -345,7 +345,9 @@ export default {
     },
     ruanjianbaoku() {}
   },
-  beforeMount() {},
+  beforeMount() {
+    clearInterval(tiemInterval);
+  },
   mounted() {
     this.getkjData();
 

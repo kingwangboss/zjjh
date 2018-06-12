@@ -294,6 +294,7 @@ export default {
                     localStorage.FreePlanSiteUrl = res.data.Data.FreePlanSiteUrl;
                     localStorage.user_name = this.user.name;
                     localStorage.user_pwd = this.user.pwd;
+                    localStorage.QQCode = res.data.Data.QQCode;
                     this.$router.push({
                         path: "/firstpage"
                     })
