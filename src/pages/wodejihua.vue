@@ -1,13 +1,36 @@
 <template>
   <div class="container">
       <m-header :title="title"></m-header>
-      <div class="line"></div>
-      <wodejihuacell :planData="planData"></wodejihuacell>
-      <div class="line"></div>
+      <div v-if="planData">
+        <div class="line"></div>
+        <wodejihuacell :planData="planData"></wodejihuacell>
+        <div class="line"></div>
+      </div>
+      <div class="div" v-else>
+        暂无数据
+      </div>
   </div>
 </template>
 
 <style lang="less" scoped>
+#bundle {
+  .juzhong {
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+}
+.div{
+  position: absolute;
+  width: 100%;
+  height: 94%;
+  background-color: #f8f8f8;
+  #bundle>.juzhong;
+  color: #b3b3b3;
+  font-size: 6vw;
+}
 .line {
   background-color: #f8f8f8;
   width: 100%;

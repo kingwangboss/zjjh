@@ -81,6 +81,7 @@
   color: #fff;
   font-size: 18px;
   background: rgb(253, 179, 9);
+  margin-bottom: 10%;
 }
 
 .line {

@@ -1,5 +1,5 @@
 <template>
-  <div @touchmove.prevent>
+  <div>
     <m-header :title="title"></m-header>
     <div class="btnview">
       

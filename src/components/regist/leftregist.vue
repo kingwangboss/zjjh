@@ -58,7 +58,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: auto;
+  height: 100%;
   margin-top: 60px;
   #bundle > .juzhong;
   .div-bor {
@@ -81,14 +81,7 @@
       font-size: 16px;
       color: black;
     }
-    .input1 {
-      outline: none;
-      background-color: transparent;
-      margin-top: 3px;
-      margin-left: -20px;
-      font-size: 16px;
-      color: black;
-    }
+    
   }
 
   .div-bor1 {
@@ -104,6 +97,7 @@
       outline: none;
       background-color: transparent;
       margin-top: 3px;
+      width: 70%;;
       padding-left: 40px;
       font-size: 16px;
       color: black;
@@ -171,14 +165,15 @@
       outline: none;
       margin-left: 15px;
       // line-height: 40px;
-      height: 40px;
+      // height: 40px;
+      height: 100%;
       width: 100px;
       border-radius: 4px;
       background-color: rgb(145, 7, 95);
       border: solid rgb(145, 7, 95) 1px;
       color: white;
       font-size: 12px;
-      align-content: center;
+      // align-content: center;
     }
   }
   .bottom {
@@ -195,6 +190,7 @@
     color: #fff;
     font-size: 18px;
     background: rgb(253, 179, 9);
+    margin-bottom: 5%;
   }
   .btnEnable {
     margin-top: 30px;
@@ -204,7 +200,8 @@
     border: 0;
     color: #fff;
     font-size: 18px;
-    background: rgb(253, 218, 111);
+    background: rgb(253, 218, 111); 
+    margin-bottom: 5%;
   }
 }
 </style>

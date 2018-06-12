@@ -126,6 +126,7 @@
       .input1 {
         outline: none;
         background-color: transparent;
+        width: 70%;
         margin-top: 3px;
         padding-left: 40px;
         font-size: 16px;
@@ -194,6 +195,7 @@
       color: #fff;
       font-size: 18px;
       background: rgb(253, 179, 9);
+      margin-bottom: 5%;
     }
     .btnEnable {
       margin-top: 30px;
@@ -204,6 +206,7 @@
       color: #fff;
       font-size: 18px;
       background: rgb(253, 218, 111);
+      margin-bottom: 5%;
     }
   }
 }

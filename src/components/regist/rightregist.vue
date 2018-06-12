@@ -1,6 +1,5 @@
 <template>
-    <div class="container" @touchmove.prevent>
-        <form @submit.prevent="submit">
+    <div class="container">
         <div>
          
             <div class="div-bor">
@@ -31,12 +30,14 @@
                 </div>
                 <img style="margin-left:15px;width:100px;height:40px" :src="user.imgurl" alt="" @click="getData()">
             </div>
+
+            <el-button v-if="disabled" :disabled="disabled" class="btnEnable" type="primary" >注册</el-button>
+            <el-button v-else :disabled="disabled" class="btnDefault" type="primary" @click="submit">注册</el-button>
         </div>
 
-        <el-button v-if="disabled" :disabled="disabled" class="btnEnable" type="primary" native-type="submit">注册</el-button>
-        <el-button v-else :disabled="disabled" class="btnDefault" type="primary" native-type="submit">注册</el-button>
-      </form>
+        
     </div>
+    
 </template>
 
 <style lang="less" scoped>
@@ -59,6 +60,8 @@
   padding-top: 10%;
   padding-bottom: 40%;
   background: white;
+  flex-direction: column;
+  height: 100%;
   #bundle > .juzhong;
   .div-bor {
     position: relative;
@@ -79,14 +82,7 @@
       font-size: 16px;
       color: black;
     }
-    .input1 {
-      outline: none;
-      background-color: transparent;
-      margin-top: 3px;
-      margin-left: -20px;
-      font-size: 16px;
-      color: black;
-    }
+
   }
   .top {
     margin-top: 10%;
@@ -104,6 +100,7 @@
       .input1 {
         outline: none;
         background-color: transparent;
+        width: 70%;
         margin-top: 3px;
         padding-left: 40px;
         font-size: 16px;
@@ -189,6 +186,7 @@
     color: #fff;
     font-size: 18px;
     background: rgb(253, 179, 9);
+    margin-bottom: 5%;
   }
   .btnEnable {
     margin-top: 30px;
@@ -199,6 +197,7 @@
     color: #fff;
     font-size: 18px;
     background: rgb(253, 218, 111);
+    margin-bottom: 5%;
   }
 }
 </style>

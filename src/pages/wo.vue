@@ -66,7 +66,7 @@
 .bottom-cell {
   margin: 30px 15px 0px 15px;
   background: rgb(243, 243, 243);
-  border-radius: 10px;
+  // border-radius: 10px;
   display: flex;
   flex-direction: column;
   -webkit-align-items: center;
