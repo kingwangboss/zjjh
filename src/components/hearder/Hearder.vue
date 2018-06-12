@@ -17,7 +17,7 @@
                 </span>
 
                 <span v-if="title.shousuo" class="right" @click="shousuo">
-                  搜索
+                  <img src="../../assets/img_search.png" alt="搜索" />
                 </span>
                 
 
@@ -63,8 +63,8 @@
         position: absolute;
         right: 20px;
         img {
-          width: 25px;
-          height: 25px;
+          width: 20px;
+          height: 20px;
           vertical-align: middle;
         }
       }

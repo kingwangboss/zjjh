@@ -348,6 +348,9 @@ export default {
   beforeMount() {
     clearInterval(tiemInterval);
   },
+  beforeUpdata(){
+    clearInterval(tiemInterval);
+  },
   mounted() {
     this.getkjData();
 

@@ -98,7 +98,7 @@ export default {
   methods: {
     analysis(str) {
       var temp = [];
-      temp = str.split(",").reverse();
+      temp = str.split(",");
       return temp;
     },
     commit(id) {
