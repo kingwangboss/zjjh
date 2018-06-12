@@ -4,7 +4,7 @@
 
         <div class="maincontainer">
             <div class="content">
-                <img class="topImg" src="../assets/login/top.png" alt="icon">
+                <img class="topImg" src="../assets/login/top1.png" alt="icon">
 
                 <form @submit.prevent="submit">
                     <div>

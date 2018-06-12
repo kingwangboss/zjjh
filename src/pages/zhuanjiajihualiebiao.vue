@@ -193,7 +193,6 @@
       justify-content: flex-start;
       padding-left: 10px;
       font-size: 4vw;
-      margin-left: 4vw;
     }
     .item3 {
       height: 10vw;
