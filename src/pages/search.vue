@@ -16,7 +16,7 @@
   height: 100%;
   top: 44px;
   .seaech {
-    //   margin: 10px;
+      margin: 10px;
   }
   .cell {
     // margin-top: 10px;

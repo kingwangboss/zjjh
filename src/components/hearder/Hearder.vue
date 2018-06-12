@@ -72,8 +72,8 @@
         position: absolute;
         left: 20px;
         img {
-          width: 15px;
-          height: 25px;
+          width: 10px;
+          height: 18px;
           vertical-align: middle;
         }
       }
