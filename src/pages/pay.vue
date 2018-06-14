@@ -49,7 +49,7 @@
         </div>
 
         <div class="bottom-btndiv">
-            <button class="bottom-btn" @click="payClick">确认支付 {{price}}</button>
+            <button class="bottom-btn" @click="payClick">确认支付 ￥{{price}}</button>
         </div>
     </div>
 </template>

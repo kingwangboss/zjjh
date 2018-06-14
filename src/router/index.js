@@ -61,10 +61,15 @@ export default new Router({
       name: 'wodejihua',
       component: resolve => require(['@/pages/wodejihua'], resolve)
     },
+    // {
+    //   path: '/zhuanjiajihualiebiao',
+    //   name: 'zhuanjiajihualiebiao',
+    //   component: resolve => require(['@/pages/zhuanjiajihualiebiao'], resolve)
+    // },
     {
-      path: '/zhuanjiajihualiebiao',
-      name: 'zhuanjiajihualiebiao',
-      component: resolve => require(['@/pages/zhuanjiajihualiebiao'], resolve)
+      path: '/zhuanjiajihualiebiao1',
+      name: 'zhuanjiajihualiebiao1',
+      component: resolve => require(['@/pages/zhuanjiajihualiebiao1'], resolve)
     },
     {
       path: '/planDetail',

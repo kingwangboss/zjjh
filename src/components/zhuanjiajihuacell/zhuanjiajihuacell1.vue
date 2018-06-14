@@ -103,7 +103,7 @@ export default {
     },
     commit(id) {
       this.$router.push({
-        path: "/zhuanjiajihualiebiao",
+        path: "/zhuanjiajihualiebiao1",
         query: {
           planid: id
         }
