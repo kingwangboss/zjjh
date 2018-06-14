@@ -35,7 +35,7 @@
   width: 100%;
   height: 100%;
   background: rgb(239, 239, 239);
-  position: absolute;
+  position: fixed;
   .cell {
     display: flex;
     flex-direction: row;

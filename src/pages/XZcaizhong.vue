@@ -24,9 +24,8 @@
   display: flex;
   flex-direction: column;
   background: rgb(237, 239, 240);
-  // padding-bottom: 100%;
-  position: absolute;
-  height: 94%;
+  position: fixed;
+  height: 100%;
   width: 100%;
 }
 

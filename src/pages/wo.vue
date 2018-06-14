@@ -37,6 +37,12 @@
 </template>
 
 <style lang="less" scoped>
+.maincontainer{
+  background-color: white;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -59,7 +65,7 @@
 
 .bottom {
   display: flex;
-  width: 100%;
+  // width: 100%;
   flex-wrap: wrap;
   margin: 0 30px;
 }
@@ -114,7 +120,7 @@ export default {
       screenWidth: document.body.clientWidth,
       nickname: localStorage.Username,
       paytype: localStorage.PayType,
-      qqcode:localStorage.QQCode,
+      qqcode: localStorage.QQCode
     };
   },
   components: {
@@ -151,7 +157,6 @@ export default {
       localStorage.PlanType = "";
       localStorage.PlanID = "";
       localStorage.ParentPlanID = "";
-      
 
       this.$router.push({
         path: "/"
@@ -174,7 +179,7 @@ export default {
       this.$router.push({
         path: "/wo/about"
       });
-    },
+    }
   },
   watch: {
     screenWidth(val) {

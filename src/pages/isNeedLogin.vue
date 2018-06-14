@@ -53,7 +53,11 @@ export default {
           ) {
             that.$router.push("/firstpage");
           } else {
-            that.$router.push("/login");
+            if(localStorage.sid){
+              that.$router.push("/login");
+            }else{
+              that.$router.push("/XZcaizhong");
+            }
           }
         } else {
           // this.$router.push('/error')
@@ -64,7 +68,11 @@ export default {
           ) {
             that.$router.push("/firstpage");
           } else {
-            that.$router.push("/login");
+            if(localStorage.sid){
+              that.$router.push("/login");
+            }else{
+              that.$router.push("/XZcaizhong");
+            }
           }
         }
       }

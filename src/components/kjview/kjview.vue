@@ -2,12 +2,12 @@
   <div class="kjview">
     <div class="top-top">
         <!-- <div class="item1"></div> -->
-        <img style="height:5vw;" src="../../assets/dbx.png" alt="">
+        <img style="height:3vw;" src="../../assets/dbx.png" alt="">
         <span class="qishu1">&nbsp;&nbsp;第{{KJData.NewLottery.CurrentPeriod}}期开奖&nbsp;&nbsp;{{KJData.NewLottery.CurrentOpenTime}}</span>
     </div>
     <kjnum class="top-middle" :data="kjnum"></kjnum>
 
-    <div class="top-bottom" v-if="time===0">
+    <div class="top-bottom" v-if="time === 0">
         <span class="line"></span>
         <span class="label1">第{{KJData.NewLottery.NextPeriod}}期正在开奖...</span>
         <span class="line"></span>
@@ -24,9 +24,6 @@
 <style lang="less" scoped>
 .kjview {
   width: 100%;
-  // background: url(../../assets/jianbian.png);
-  // background-repeat: no-repeat;
-  // background-size: 100% 100%;
   background:rgb(145, 7, 95);
   display: flex;
   flex-direction: column;
@@ -61,13 +58,14 @@
     .line {
       background-color: rgb(248, 198, 65);
       height: 1px;
-      width: 28%;
+      width: 27vw;
       margin-top: 12px;
     }
     .label1 {
       color: rgb(248, 198, 65);
       line-height: 25px;
       font-size: 3vw;
+      margin: 0;
     }
   }
 }
