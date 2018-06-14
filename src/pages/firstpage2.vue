@@ -283,7 +283,6 @@ export default {
         "&Token=" +
         localStorage.Token +
         tokenCode;
-        console.log(signStr);
       let data = new FormData();
       data.append("Action", "GetLotteryFreePlanInfo");
       data.append("PlanID", localStorage.PlanID);

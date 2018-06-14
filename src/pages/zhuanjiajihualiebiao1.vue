@@ -60,8 +60,8 @@
         </div>
         <div class="line"></div>
 
-        <div class="top">
-            <div v-if="planData.BuySign === 1" class="top-item1" style="border-bottom: 1px solid rgb(239, 239, 239);padding-bottom:2vw;" v-show="planData.BuySign === 1 || planData.BuySign === 2">
+        <div class="top" v-show="planData.BuySign === 1 || planData.BuySign === 2">
+            <div v-if="planData.BuySign === 1" class="top-item1" style="border-bottom: 1px solid rgb(239, 239, 239);padding-bottom:2vw;">
             <span style="padding-left: 8px;font-size: 4vw;line-height:8vw;" class="left">购买天数:</span>
             <div class="right2">
               <img class="btn" src="../assets/goumai/jian1.png" alt="" @click="jian">
@@ -70,7 +70,7 @@
             </div>
           </div>
 
-          <div v-else class="top-item1" style="border-bottom: 1px solid rgb(239, 239, 239);padding-bottom:2vw;" v-show="planData.BuySign === 1 || planData.BuySign === 2">
+          <div v-else class="top-item1" style="border-bottom: 1px solid rgb(239, 239, 239);padding-bottom:2vw;">
             <span style="padding-left: 8px;font-size: 4vw;line-height:8vw;" class="left">续费天数:</span>
             <div class="right2">
               <img class="btn" src="../assets/goumai/jian1.png" alt="" @click="jian">
@@ -91,7 +91,7 @@
       </div>
 
       <div class="bottom-btnView1" v-else-if="planData.BuySign === 3">
-            <button class="bottom-btn1" style="background-color: #b3b3b3;border-color:rgba(0,0,0,0);color:#fff;">￥{{price}} 继续续费</button>
+            <button class="bottom-btn1" style="background-color: #b3b3b3;border-color:rgba(0,0,0,0);color:#fff;">继续续费</button>
             <button class="bottom-btn1" style="background-color: rgb(145, 7, 95);border-color:rgba(0,0,0,0);color:#fff;" @click="pushplan">进入计划</button>
       </div>
 
