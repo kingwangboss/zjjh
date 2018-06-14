@@ -299,6 +299,9 @@ export default {
 
             localStorage.user_name = this.mobile.num;
             localStorage.user_pwd = this.mobile.newpwd1;
+            localStorage.PlanType = "";
+            localStorage.PlanID = "";
+            localStorage.ParentPlanID = "";
             this.$router.push({
               path: "/"
             });

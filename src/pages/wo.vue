@@ -148,6 +148,10 @@ export default {
       localStorage.removeItem("tab");
       localStorage.removeItem("shujufenxi");
       localStorage.removeItem("activeName2");
+      localStorage.PlanType = "";
+      localStorage.PlanID = "";
+      localStorage.ParentPlanID = "";
+      
 
       this.$router.push({
         path: "/"

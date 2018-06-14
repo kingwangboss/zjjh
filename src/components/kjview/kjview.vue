@@ -2,6 +2,7 @@
   <div class="kjview">
     <div class="top-top">
         <!-- <div class="item1"></div> -->
+        <img src="../../assets/dbx.png" alt="">
         <span class="qishu1">&nbsp;&nbsp;第{{KJData.NewLottery.CurrentPeriod}}期开奖&nbsp;&nbsp;{{KJData.NewLottery.CurrentOpenTime}}</span>
     </div>
     <kjnum class="top-middle" :data="kjnum"></kjnum>

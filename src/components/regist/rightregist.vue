@@ -295,6 +295,9 @@ export default {
               localStorage.FreePlanSiteUrl = res.data.Data.FreePlanSiteUrl;
               localStorage.user_name = this.user.name;
               localStorage.user_pwd = this.user.newpwd1;
+              localStorage.PlanType = "";
+              localStorage.PlanID = "";
+              localStorage.ParentPlanID = "";
               that.$router.push({
                 path: "/"
               });
