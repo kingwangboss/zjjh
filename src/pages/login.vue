@@ -1,5 +1,5 @@
 <template>
-    <div @touchmove.prevent>
+    <!-- <div @touchmove.prevent> -->
         <!-- <m-header :title="title"></m-header> -->
 
         <div class="maincontainer">
@@ -40,7 +40,7 @@
 
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 </template>
 
 
@@ -68,16 +68,13 @@
     height: 100%;
     position:fixed;
     top:0;
-    left:0;
-    bottom:0;
-    right:0;
     z-index:-1;
     .content {
         #bundle>.juzhong;
         flex-direction: column;
         .topImg {
-            width: 100px;
-            height: 100px;
+            width: 25vw;
+            height: 25vw;
             margin-top: 10%;
             margin-bottom: 10%;
         }

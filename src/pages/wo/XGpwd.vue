@@ -54,6 +54,7 @@
     input {
       outline: none;
       width: 80%;
+      border-radius: 0;
     }
   }
 }

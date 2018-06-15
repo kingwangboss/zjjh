@@ -51,8 +51,8 @@
 }
 
 .userinfo-avatar {
-  width: 64px;
-  height: 64px;
+  width: 15vw;
+  height: 15vw;
   margin: 10px;
   border-radius: 50%;
 }
@@ -93,6 +93,10 @@
   height: 13vw;
   position: relative;
   top: -20px; 
+}
+
+.bottom-btndiv{
+  padding-bottom: 100px;
 }
 
 .bottom-btn {

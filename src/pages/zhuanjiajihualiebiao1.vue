@@ -253,7 +253,7 @@ export default {
     },
     shijian(i) {
       var str = this.planData.AuthExpiration;
-      var myDate = new Date(str);
+      var myDate = new Date(str.replace(/-/g,'/'));
       var arr = [];
       arr.push(myDate.getFullYear());
       arr.push(myDate.getMonth() + 1);

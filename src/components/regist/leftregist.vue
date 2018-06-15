@@ -76,7 +76,7 @@
       outline: none;
       background-color: transparent;
       margin-top: 3px;
-      width: 100%;
+      width: 70%;
       padding-left: 40px;
       font-size: 16px;
       color: black;
