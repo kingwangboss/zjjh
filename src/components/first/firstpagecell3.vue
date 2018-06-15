@@ -114,7 +114,7 @@
       }
 
       .dianMiddle {
-        height: 5px;
+        height: 4px;
         width: 7px;
         margin-left: 2px;
         margin-top: 5px;

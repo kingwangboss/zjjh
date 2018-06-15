@@ -51,7 +51,7 @@
                                 <span style="margin-left:5px;margin-top:10px;font-size:13px;">{{itemCell.split('|')[0]}}</span>
                                 <!-- <span style="margin-left:5px;margin-top:10px;font-size:13px; color:#CD0C16;">预</span> -->
                                 <div v-if="item.DsType === 0">
-                                  <div v-show="itemCell.split('|')[2] == 1" class="item2" style="border: 1px solid rgb(58, 191, 60);background: rgb(58, 191, 60);">
+                                  <div v-show="itemCell.split('|')[2] <= 1" class="item2" style="border: 1px solid rgb(58, 191, 60);background: rgb(58, 191, 60);">
                                     {{itemCell.split('|')[2]}}定
                                   </div>
                                   <div v-show="itemCell.split('|')[2] == 2" class="item2" style="border: 1px solid rgb(248, 198, 65);background: rgb(248, 198, 65);">
@@ -62,7 +62,7 @@
                                   </div>
                                 </div>
                                  <div v-else-if="item.DsType === 1">
-                                   <div v-show="itemCell.split('|')[2] == 1" class="item2" style="border: 1px solid rgb(58, 191, 60);background: rgb(58, 191, 60);">
+                                   <div v-show="itemCell.split('|')[2] <= 1" class="item2" style="border: 1px solid rgb(58, 191, 60);background: rgb(58, 191, 60);">
                                     {{itemCell.split('|')[2]}}杀
                                   </div>
                                   <div v-show="itemCell.split('|')[2] == 2" class="item2" style="border: 1px solid rgb(248, 198, 65);background: rgb(248, 198, 65);">
@@ -158,7 +158,7 @@
 .psvalue {
   font-size: 12px;
   padding-left: 3px;
-  color: #cd0c16;
+  color: rgb(145, 7, 95);
 }
 
 .detail-bottom {
