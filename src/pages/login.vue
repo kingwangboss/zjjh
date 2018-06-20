@@ -73,10 +73,10 @@
         #bundle>.juzhong;
         flex-direction: column;
         .topImg {
-            width: 25vw;
-            height: 25vw;
-            margin-top: 10%;
-            margin-bottom: 10%;
+            width: 80px;
+            height: 80px;
+            margin-top: 50px;
+            margin-bottom: 30px;
         }
         .div-bor {
             

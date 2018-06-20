@@ -1,6 +1,6 @@
 import axios from 'axios';
 import router from '../router'
-import { Toast, MessageBox,Indicator } from 'mint-ui'
+import { Toast, MessageBox, Indicator } from 'mint-ui'
 // axios 配置
 axios.defaults.timeout = 20000;
 axios.defaults.baseURL = '';
@@ -43,8 +43,8 @@ axios.interceptors.response.use(
     console.log('拦截器 MsgType:' + response.data.MsgType)
     console.log('拦截器 Msg:' + response.data.Msg)
     console.log(response);
-    
-    
+
+
     if (localStorage.tab == 'lishi') {
 
     } else {
@@ -72,7 +72,7 @@ axios.interceptors.response.use(
               //   path: '/buy'
               // })
               router.push({
-                path:"/zhuanjiajihualiebiao",
+                path: "/zhuanjiajihualiebiao1",
                 query: {
                   planid: localStorage.ParentPlanID
                 },
@@ -159,6 +159,8 @@ axios.interceptors.response.use(
       }).then(action => {
 
       })
+    } else if (response.data.MsgType === 8) {
+      router.go(-1)
     } else if (response.data.Msg != null && response.data.Msg != "") {
       Toast({
         message: response.data.Msg,
