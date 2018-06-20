@@ -14,9 +14,9 @@
                 <span>确认密码：</span>
                 <input v-model="pwd.newpwd1" placeholder="请在此输入新密码" type="password" maxlength="20" @input="inputFuction">
             </div>
-            <div>
-                <el-button v-if="disabled" :disabled="disabled" class="btnEnable" type="primary" @click="btnClick">修改密码</el-button>
-                <el-button v-else :disabled="disabled" class="btnDefault" type="primary" @click="btnClick">修改密码</el-button>
+            <div class="btn">
+                <button v-if="disabled" class="btnEnable">修改密码</button>
+                <button v-else class="btnDefault" @click="btnClick">修改密码</button>
             </div>
         </div>
     </div>
@@ -59,13 +59,21 @@
   }
 }
 
-.btnDefault {
+.btn{
+  width:100%;
+
+}
+
+.btnDefault{
   margin-top: 30px;
   width: 80%;
   border: 0;
   color: #fff;
   font-size: 18px;
   background: rgb(253, 179, 9);
+  padding:7px 0;
+  border-radius: 5px;
+  outline: none;
 }
 .btnEnable {
   margin-top: 30px;
@@ -74,6 +82,9 @@
   color: #fff;
   font-size: 18px;
   background: rgb(253, 218, 111);
+  padding:7px 0;
+  border-radius: 5px;
+  outline: none;
 }
 </style>
 

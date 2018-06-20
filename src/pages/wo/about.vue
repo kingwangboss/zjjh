@@ -86,7 +86,7 @@ export default {
   },
   methods: {
     urlClick() {
-      window.location.href = "http://ycw.cpnet.com";
+      window.location.href = this.OfficialUrl;
     }
   }
 };

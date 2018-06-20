@@ -61,8 +61,8 @@
         <div class="line"></div>
 
         <div class="top" v-show="planData.BuySign === 1 || planData.BuySign === 2">
-            <div v-if="planData.BuySign === 1" class="top-item1" style="border-bottom: 1px solid rgb(239, 239, 239);padding-bottom:2vw;">
-            <span style="padding-left: 8px;font-size: 4vw;line-height:8vw;" class="left">购买天数:</span>
+            <div v-if="planData.BuySign === 1" class="top-item1" style="border-bottom: 1px solid rgb(239, 239, 239);padding-bottom:3vw;">
+            <span style="padding-left: 8px;font-size: 4vw;line-height:10vw;" class="left">购买天数:</span>
             <div class="right2">
               <img class="btn" src="../assets/goumai/jian1.png" alt="" @click="jian">
               <el-input v-model="inputnum" class="input" type="number" size="mini" @change="changenum"></el-input>
@@ -70,8 +70,8 @@
             </div>
           </div>
 
-          <div v-else class="top-item1" style="border-bottom: 1px solid rgb(239, 239, 239);padding-bottom:2vw;">
-            <span style="padding-left: 8px;font-size: 4vw;line-height:8vw;" class="left">续费天数:</span>
+          <div v-else class="top-item1" style="border-bottom: 1px solid rgb(239, 239, 239);padding-bottom:3vw;">
+            <span style="padding-left: 8px;font-size: 4vw;line-height:10vw;" class="left">续费天数:</span>
             <div class="right2">
               <img class="btn" src="../assets/goumai/jian1.png" alt="" @click="jian">
               <el-input v-model="inputnum" class="input" type="number" size="mini" @change="changenum"></el-input>
@@ -181,8 +181,8 @@
     display: flex;
     flex-direction: column;
     .item2 {
-      height: 10vw;
-      line-height: 10vw;
+      height: 14vw;
+      line-height: 14vw;
       border-bottom: 1px solid rgb(239, 239, 239);
       display: flex;
       justify-content: flex-start;
@@ -190,15 +190,15 @@
       font-size: 4vw;
     }
     .item3 {
-      height: 10vw;
+      height: 14vw;
       border-bottom: 1px solid rgb(239, 239, 239);
     }
     .item4 {
-      height: 10vw;
+      height: 14vw;
       border-bottom: 1px solid rgb(239, 239, 239);
     }
     .item5 {
-      height: 10vw;
+      height: 14vw;
     }
   }
 }
@@ -256,7 +256,9 @@ export default {
       var myDate = new Date(str.replace(/-/g,'/'));
       var arr = [];
       arr.push(myDate.getFullYear());
-      arr.push(myDate.getMonth() + 1);
+      var month = myDate.getMonth() + 1;
+      month = month < 10 ? '0' + month : '' + month;
+      arr.push(month);
       arr.push(myDate.getDate());
       return arr[i];
     },

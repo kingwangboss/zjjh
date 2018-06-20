@@ -120,7 +120,7 @@
         margin-top: 5px;
         color: white;
         text-align: center;
-        transform: skewX(-45deg);
+        transform: skewX(45deg);
         border-radius: 1px;
       }
 
