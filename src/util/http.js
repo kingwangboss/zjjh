@@ -1,10 +1,11 @@
 import axios from 'axios';
 import router from '../router'
+// import { Loading, Message } from 'element-ui'
 import { Toast, MessageBox, Indicator } from 'mint-ui'
 // axios 配置
 axios.defaults.timeout = 20000;
 axios.defaults.baseURL = '';
-var loadinginstace
+// var loadinginstace
 // http request 拦截器
 axios.interceptors.request.use(
   config => {
@@ -14,8 +15,11 @@ axios.interceptors.request.use(
 
   }, error => {
     // Indicator.close();
-    Message.error({
-      message: '加载超时'
+    // Message.error({
+    //   message: '加载超时'
+    // })
+    router.push({
+      path: "/login",
     })
     return Promise.reject(error)
   }
@@ -179,8 +183,12 @@ axios.interceptors.response.use(
     }
   }, error => {
     // Indicator.close();
-    Message.error({
-      message: '加载失败'
+    // Message.error({
+    //   message: '加载失败'
+    // })
+    Indicator.close();
+    router.push({
+      path: "/login",
     })
     return Promise.reject(error)
   }

@@ -51,11 +51,12 @@ export default {
             localStorage.Token &&
             localStorage.tokenCode
           ) {
-            that.$router.push("/firstpage");
+            // that.$router.push("/firstpage");
+            that.login();
           } else {
-            if(localStorage.sid){
+            if (localStorage.sid) {
               that.$router.push("/login");
-            }else{
+            } else {
               that.$router.push("/XZcaizhong");
             }
           }
@@ -66,11 +67,12 @@ export default {
             localStorage.Token &&
             localStorage.tokenCode
           ) {
-            that.$router.push("/firstpage");
+            // that.$router.push("/firstpage");
+            that.login();
           } else {
-            if(localStorage.sid){
+            if (localStorage.sid) {
               that.$router.push("/login");
-            }else{
+            } else {
               that.$router.push("/XZcaizhong");
             }
           }
@@ -93,6 +95,53 @@ export default {
         }
       }
       return flag;
+    },
+
+    login() {
+      let signStr =
+        localStorage.sid +
+        localStorage.user_name +
+        this.$global.AppType +
+        this.$global.AppCode +
+        this.$global.AppVersion +
+        this.$sha256.sha256(localStorage.user_pwd).toUpperCase();
+      console.log(signStr);
+      let data = new FormData();
+      data.append("Action", "Login2");
+      data.append("SID", localStorage.sid);
+      data.append("Account", localStorage.user_name);
+      data.append("AppType", this.$global.AppType);
+      data.append("AppCode", this.$global.AppCode);
+      data.append("AppVersion", this.$global.AppVersion);
+      data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());
+
+      localStorage.pwd = this.$sha256.sha256(localStorage.user_pwd).toUpperCase();
+      this.$http
+        .post(this.$global.url, data)
+        .then(res => {
+          if (res) {
+            localStorage.uid = res.data.Data.UID;
+            localStorage.AuthTypeName = res.data.Data.AuthTypeName;
+            localStorage.SiteUrl = res.data.Data.SiteUrl;
+            localStorage.AuthType = res.data.Data.AuthType;
+            localStorage.Username = res.data.Data.NickName;
+            localStorage.Token = res.data.Data.Token;
+            localStorage.PayType = res.data.Data.PayType;
+            localStorage.QQUrl = res.data.Data.QQUrl;
+            localStorage.tokenCode = this.$sha256
+              .sha256(res.data.Data.Token + localStorage.pwd)
+              .toUpperCase();
+            localStorage.OfficialUrl = res.data.Data.OfficialUrl;
+            localStorage.FreePlanSiteUrl = res.data.Data.FreePlanSiteUrl;
+            localStorage.QQCode = res.data.Data.QQCode;
+            this.$router.push({
+              path: "/firstpage"
+            });
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
   }
 };
