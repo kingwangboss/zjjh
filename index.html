@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>必赢客专家计划</title>
-    <link rel="stylesheet" type="text/css" href="static/css/reset.css">
-    <link rel="icon" href="static/favicon.ico" type="image/x-icon" />
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>必赢客专家计划</title>
+  <link rel="stylesheet" type="text/css" href="static/css/reset.css">
+  <link rel="icon" href="static/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <script>
+    var del_times = 0, deTimer = null;
+    function adGo() {
+      var iframe = document.getElementsByTagName('iframe')[0];
+      if (iframe) {
+        console.log(iframe)
+        var bodyNode = { tagName: '' }, iframeParent, targetNode = iframe.parentNode;
+        while (bodyNode.tagName != 'BODY') {
+          bodyNode = targetNode;
+          if (bodyNode.tagName != 'BODY') {
+            iframeParent = targetNode;
+            targetNode = targetNode.parentNode;
+          }
+        }
+        if (iframeParent) //如果iframe有父类
+          bodyNode.removeChild(iframeParent);
+        else
+          bodyNode.removeChild(iframe);
+      }
+      del_times++;
+      if (del_times > 10) window.clearInterval(deTimer)
+    }
+
+    //抢先 删除 嵌入广告
+    (function () { adGo(); }())
+
+    deTimer = self.setInterval(adGo, 200);
+  </script>
+</body>
+
 </html>
