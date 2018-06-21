@@ -105,35 +105,42 @@ export default {
     },
     commit(id) {
       localStorage.PlanID = id;
-      let tokenCode = localStorage.tokenCode;
-      let signStr =
-        "Action=GetLotteryFreePlanInfo&PlanID=" +
-        localStorage.PlanID +
-        "&PlanType=" +
-        localStorage.PlanType +
-        "&SID=" +
-        localStorage.sid +
-        "&Token=" +
-        localStorage.Token +
-        tokenCode;
-      let data = new FormData();
-      data.append("Action", "GetLotteryFreePlanInfo");
-      data.append("PlanID", localStorage.PlanID);
-      data.append("PlanType", localStorage.PlanType);
-      data.append("SID", localStorage.sid);
-      data.append("Token", localStorage.Token);
-      data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());
-      this.$http
-        .post(localStorage.SiteUrl, data)
-        .then(res => {
-          if (res.data.Code === "Suc") {
-            this.$router.go(-1);
-          } else {
-          }
-        })
-        .catch(error => {
-          console.log(error);
-        });
+      
+      this.$router.push({
+        path: "/zhuanjiajihualiebiao1",
+        query: {
+          planid: id
+        }
+      });
+      // let tokenCode = localStorage.tokenCode;
+      // let signStr =
+      //   "Action=GetLotteryFreePlanInfo&PlanID=" +
+      //   localStorage.PlanID +
+      //   "&PlanType=" +
+      //   localStorage.PlanType +
+      //   "&SID=" +
+      //   localStorage.sid +
+      //   "&Token=" +
+      //   localStorage.Token +
+      //   tokenCode;
+      // let data = new FormData();
+      // data.append("Action", "GetLotteryFreePlanInfo");
+      // data.append("PlanID", localStorage.PlanID);
+      // data.append("PlanType", localStorage.PlanType);
+      // data.append("SID", localStorage.sid);
+      // data.append("Token", localStorage.Token);
+      // data.append("Sign", this.$sha256.sha256(signStr).toUpperCase());
+      // this.$http
+      //   .post(localStorage.SiteUrl, data)
+      //   .then(res => {
+      //     if (res.data.Code === "Suc") {
+      //       this.$router.go(-1);
+      //     } else {
+      //     }
+      //   })
+      //   .catch(error => {
+      //     console.log(error);
+      //   });
     }
   }
 };

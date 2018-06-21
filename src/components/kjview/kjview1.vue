@@ -1,6 +1,6 @@
 <template>
   <div class="kjview">
-    <div class="top-top" v-if="count" style="margin-bottom:15px;">
+    <div class="top-top" v-if="count" style="margin-bottom:3vw;">
         <!-- <div class="item1"></div> -->
         <img style="height:3vw;" src="../../assets/dbx.png" alt="">
         <span class="qishu1">&nbsp;&nbsp;第{{KJData.NewLottery.CurrentPeriod}}期开奖</span>
@@ -40,7 +40,7 @@
     align-items: center;
     padding-top: 2vw;
     margin-left: 5px;
-    height: 30px;
+    height: 6vw;
     line-height: 30px;
     .item1 {
       height: 100%;
