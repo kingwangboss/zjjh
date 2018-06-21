@@ -5,12 +5,14 @@
         <div class="maincontainer">
             <div class="cell" v-for="(item,index) in dataList" :key="index">
                 <div class="cell-btnview">
+                   
                     <el-button class="btn" :class="{'btnSelect':ind == item1.SID}" type="text" v-for="(item1,index1) in item.CPNames" :key="index1" @click="btnClick($event,item1.SID)">{{item1.CPName}}
                     </el-button>
                 </div>
                 <div class="line">
-                </div>
+                </div>                
             </div>
+
             <el-button class="btnDefault" type="primary" native-type="submit" @click="changeOkClick">确定</el-button>
         </div>
     </div>
@@ -21,11 +23,16 @@
 .maincontainer {
   display: flex;
   flex-direction: column;
+  background: rgb(237, 239, 240);
+  position: fixed;
+  height: 100%;
+  width: 100%;
 }
 
 .cell {
   display: flex;
   flex-direction: column;
+  background: white;
 }
 
 .cell-btnview {
@@ -39,14 +46,14 @@
     float: left;
     margin-left: 10px;
     margin-top: 10px;
-    display: flex;
-    align-items: center;
+    // display: flex;
+    // align-items: center;
     padding: 0px 10px 0px 10px;
+    min-width: 90px;
     font-size: 13px;
-    color: rgb(80, 80, 80);
-    // min-width: 100px;
-    border-radius: 3px;
-    border: 1px solid #c4c4c4;
+    color: rgb(145, 7, 95);
+    border-radius: 5px;
+    border: 1px solid rgb(145, 7, 95);
   }
   .btnSelect {
     height: 25px;
@@ -55,15 +62,15 @@
     float: left;
     margin-left: 10px;
     margin-top: 10px;
-    display: flex;
-    align-items: center;
+    // display: flex;
+    // align-items: center;
     padding: 0px 10px 0px 10px;
+    min-width: 90px;
     font-size: 13px;
     color: white;
-    background: rgb(145, 7, 94);
-    // min-width: 100px;
-    border-radius: 3px;
+    border-radius: 5px;
     border: 1px solid rgb(145, 7, 94);
+    background: rgb(145, 7, 95);
   }
 }
 
@@ -79,8 +86,8 @@
 }
 
 .line {
-  height: 1px;
-  background: #efefef;
+  height: 5px;
+  background: rgb(237, 239, 240);
 }
 </style>
 
@@ -92,8 +99,8 @@ export default {
     return {
       title: {
         text: "选择彩种",
-        showBack: true,
-        changeOK: true
+        showBack: true
+        // changeOK:true
       },
       dataList: [],
       ind: ""
@@ -178,6 +185,7 @@ export default {
               localStorage.removeItem("PlanID");
               localStorage.removeItem("PlanType");
 
+
               this.$router.push({
                 path: "/"
               });
@@ -191,10 +199,8 @@ export default {
           path: "/"
         });
       }
-    },
-
+    }
   },
-
   mounted() {
     this.getData();
     this.ind = localStorage.sid;

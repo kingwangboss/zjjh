@@ -14,7 +14,7 @@
 }
 .gif {
   position: relative;
-  margin: 10vw auto;
+  margin: 40% auto;
   height: 150px;
   width: 250px;
   background-image: url(../assets/loading2.jpg);
