@@ -17,7 +17,7 @@
   margin: 10vw auto;
   height: 150px;
   width: 250px;
-  background-image: url(../assets/loading1.jpg);
+  background-image: url(../assets/loading2.jpg);
   background-repeat: no-repeat;
   background-position: 0px 0px;
   background-size: 100% 100%;
