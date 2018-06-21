@@ -11,7 +11,8 @@
                 <div class="line">
                 </div>
             </div>
-            <el-button class="btnDefault" type="primary" native-type="submit" @click="changeOkClick">确定</el-button>
+            <el-button v-if="isShow()" class="btnDefault" type="primary" native-type="submit" @click="changeOkClick">确定</el-button>
+            <el-button v-else class="btnEnable" type="primary" native-type="submit">确定</el-button>
         </div>
     </div>
 </template>
@@ -66,7 +67,6 @@
     border: 1px solid rgb(145, 7, 94);
   }
 }
-
 .btnDefault {
   margin-top: 10%;
   margin-left: 15%;
@@ -75,6 +75,16 @@
   color: #fff;
   font-size: 18px;
   background: rgb(253, 179, 9);
+  margin-bottom: 10%;
+}
+.btnEnable {
+  margin-top: 10%;
+  margin-left: 15%;
+  width: 70%;
+  border: 0;
+  color: #fff;
+  font-size: 18px;
+  background: rgb(253, 218, 111);
   margin-bottom: 10%;
 }
 
@@ -96,7 +106,7 @@ export default {
         changeOK: true
       },
       dataList: [],
-      ind: ""
+      ind: "",
     };
   },
 
@@ -124,6 +134,13 @@ export default {
     },
     isSelect(item1) {
       if (item1.SID == localStorage.sid) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    isShow() {
+      if (this.ind) {
         return true;
       } else {
         return false;
@@ -191,8 +208,7 @@ export default {
           path: "/"
         });
       }
-    },
-
+    }
   },
 
   mounted() {
