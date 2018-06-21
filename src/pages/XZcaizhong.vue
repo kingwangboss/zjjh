@@ -46,9 +46,10 @@
     float: left;
     margin-left: 10px;
     margin-top: 10px;
-    display: flex;
-    align-items: center;
+    // display: flex;
+    // align-items: center;
     padding: 0px 10px 0px 10px;
+    min-width: 90px;
     font-size: 13px;
     color: rgb(145, 7, 95);
     border-radius: 25px;
@@ -61,9 +62,10 @@
     float: left;
     margin-left: 10px;
     margin-top: 10px;
-    display: flex;
-    align-items: center;
+    // display: flex;
+    // align-items: center;
     padding: 0px 10px 0px 10px;
+    min-width: 90px;
     font-size: 13px;
     color: white;
     border-radius: 25px;

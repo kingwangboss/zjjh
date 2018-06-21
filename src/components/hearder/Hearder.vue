@@ -4,8 +4,12 @@
             <div class="title-wrapper">
                 
                 <!-- <span class="title">{{title.text}}</span> -->
-                <span class="title">{{title.text}}
-                  <img v-if="title.img" class="img1" src="../../assets/genhuan1.png" alt="kkk" @click="qhCZ"/>
+                <span class="title" v-if="title.click" @click="qhCZ">{{title.text}}
+                  <img v-if="title.img" class="img1" src="../../assets/genhuan1.png" alt="kkk" />
+                </span>
+
+                <span class="title" v-else>{{title.text}}
+                  <img v-if="title.img" class="img1" src="../../assets/genhuan1.png" alt="kkk" />
                 </span>
 
                 <span v-if="title.setting" class="right" @click="setting">
@@ -47,10 +51,10 @@
         display: inline-block;
       }
       .title {
-        position: absolute;
-        width: 100%;
-        left: 50%;
-        margin-left: -50%;
+        // position: absolute;
+        // width: 100%;
+        // left: 50%;
+        // margin-left: -50%;
         font-size: 20px;
         font-weight: 500;
       }

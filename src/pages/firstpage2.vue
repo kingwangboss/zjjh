@@ -149,7 +149,7 @@
 <script>
 import mHeader from "../components/hearder/Hearder";
 import sha256 from "../util/sha256";
-import kjview from "../components/kjview/kjview";
+import kjview from "../components/kjview/kjview1";
 // import firstcell1 from "../components/first/firstpagecell1";
 import firstcell3 from "../components/first/firstpagecell3";
 
@@ -162,7 +162,8 @@ export default {
       title: {
         text: localStorage.czname,
         setting: true,
-        img: true
+        img: true,
+        click:true
       },
       kjData: "",
       nextTime: "",

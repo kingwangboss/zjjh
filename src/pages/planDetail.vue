@@ -254,7 +254,7 @@
 
 <script>
 import mHeader from "../components/hearder/Hearder";
-import kjview from "../components/kjview/kjview";
+import kjview from "../components/kjview/kjview1";
 // import "element-ui/lib/theme-default/index.css";
 import listenHuadong from "../util/listenHuadong";
 var tiemInterval;

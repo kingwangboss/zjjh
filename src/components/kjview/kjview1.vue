@@ -1,11 +1,18 @@
 <template>
   <div class="kjview">
-    <div class="top-top">
+    <div class="top-top" v-if="count" style="margin-bottom:15px;">
+        <!-- <div class="item1"></div> -->
+        <img style="height:3vw;" src="../../assets/dbx.png" alt="">
+        <span class="qishu1">&nbsp;&nbsp;第{{KJData.NewLottery.CurrentPeriod}}期开奖</span>
+        <kjnum class="top-middle" v-if="count" style="margin-left:10px;" :data="kjnum"></kjnum>
+    </div>
+    <div class="top-top" v-else>
         <!-- <div class="item1"></div> -->
         <img style="height:3vw;" src="../../assets/dbx.png" alt="">
         <span class="qishu1">&nbsp;&nbsp;第{{KJData.NewLottery.CurrentPeriod}}期开奖&nbsp;&nbsp;{{KJData.NewLottery.CurrentOpenTime}}</span>
+        <kjnum class="top-middle" v-if="count" style="margin-left:10px;" :data="kjnum"></kjnum>
     </div>
-    <kjnum class="top-middle" :data="kjnum"></kjnum>
+    <kjnum class="top-middle" v-if="!count" :data="kjnum"></kjnum>
 
     <div class="top-bottom" v-if="time === 0">
         <span class="line"></span>
@@ -24,7 +31,7 @@
 <style lang="less" scoped>
 .kjview {
   width: 100%;
-  background:rgb(145, 7, 95);
+  background: rgb(145, 7, 95);
   display: flex;
   flex-direction: column;
   .top-top {
@@ -45,6 +52,9 @@
       font-size: 4vw;
       height: 28px;
     }
+    .top-middle {
+      margin: 2vw 0vw 2vw 0vw;
+    }
   }
   .top-middle {
     margin: 2vw 0vw 2vw 0vw;
@@ -62,7 +72,7 @@
       margin-top: 12px;
     }
     .label1 {
-      min-width: 38vw;
+      min-width: 40vw;
       color: rgb(248, 198, 65);
       line-height: 25px;
       font-size: 3vw;
@@ -76,11 +86,11 @@
 <script>
 import kjnum from "./kjnum";
 export default {
-  props: ["kjdata","Time"],
+  props: ["kjdata", "Time"],
   data() {
     return {
       KJData: Object,
-      nextTime:Number
+      nextTime: Number
     };
   },
   components: {
@@ -88,12 +98,12 @@ export default {
   },
   methods: {},
   watch: {
-   'Time': function (now, old) {
-    this.nextTime = this.Time;
-   },
-   'kjdata':function(now,old){
-       this.KJData = this.kjdata;
-   }
+    Time: function(now, old) {
+      this.nextTime = this.Time;
+    },
+    kjdata: function(now, old) {
+      this.KJData = this.kjdata;
+    }
   },
   computed: {
     kjnum: {
@@ -125,15 +135,33 @@ export default {
         arr.push(num3);
         arr.push(num4);
         // console.log(arr);
-        var str = arr[0].toString() + arr[1].toString()+':'+arr[2].toString()+arr[3].toString()+':'+arr[4].toString()+arr[5].toString();
+        var str =
+          arr[0].toString() +
+          arr[1].toString() +
+          ":" +
+          arr[2].toString() +
+          arr[3].toString() +
+          ":" +
+          arr[4].toString() +
+          arr[5].toString();
         return str;
+      }
+    },
+    count:{
+      get() {
+        if(this.KJData.NewLottery.LotteryResult.split(',').length <= 5)
+        {
+          return true;
+        }else{
+          return false;
+        }
+        
       }
     },
     time: {
       get() {
         return parseInt(this.nextTime);
-      },
-
+      }
     }
   },
   created() {
