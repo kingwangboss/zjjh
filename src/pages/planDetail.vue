@@ -433,6 +433,7 @@ export default {
   beforeDestroy() {
     console.log("beforeDestroy");
     clearInterval(tiemInterval);
+    clearInterval(run);
   },
   computed: {
     
