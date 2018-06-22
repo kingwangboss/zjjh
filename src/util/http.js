@@ -18,9 +18,18 @@ axios.interceptors.request.use(
     // Message.error({
     //   message: '加载超时'
     // })
-    router.push({
-      path: "/login",
-    })
+    Indicator.close();
+    if (localStorage.sid && localStorage.Token && localStorage.tokenCode) {
+      Message.error({
+        message: '加载超时'
+      })
+    } else {
+      if (localStorage.sid) {
+        router.push("/login");
+      } else {
+        router.push("/XZcaizhong");
+      }
+    }
     return Promise.reject(error)
   }
   // config => {
@@ -187,9 +196,17 @@ axios.interceptors.response.use(
     //   message: '加载失败'
     // })
     Indicator.close();
-    router.push({
-      path: "/login",
-    })
+    if (localStorage.sid && localStorage.Token && localStorage.tokenCode) {
+      Message.error({
+        message: '加载超时'
+      })
+    } else {
+      if (localStorage.sid) {
+        router.push("/login");
+      } else {
+        router.push("/XZcaizhong");
+      }
+    }
     return Promise.reject(error)
   }
   // response => {
