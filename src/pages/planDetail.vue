@@ -5,7 +5,7 @@
 
         <kjview :kjdata="kjData" :Time="nextTime" v-if="flag"></kjview>
 
-        <el-tabs id="content" v-model="activeName" @tab-click="handleClick" style="color:black;">
+        <el-tabs id="content" v-model="activeName" @tab-click="handleClick" style="color:black;background:white">
             <el-tab-pane :label="item.Name" :name="index.toString()" :index="index.toString()" v-for="(item,index) in listData" :key="index">
                 <!-- id控制 计划切换 -->
                 <div class="detail-top">

@@ -121,8 +121,9 @@
   margin-bottom: 10vw;
   background-color: white;
   height: 100%;
-  position: fixed;
-  width: 100%;
+  position: relative;
+  // position: fixed;
+  // width: 100%;
   .top {
     margin: 2vw 1vw 2vw 1vw;
     flex-direction: column;

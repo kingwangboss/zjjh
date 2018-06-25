@@ -39,8 +39,6 @@
 <style lang="less" scoped>
 .maincontainer{
   background-color: white;
-  height: 100%;
-  position: fixed;
   width: 100%;
 }
 .userinfo {
@@ -207,7 +205,7 @@ export default {
         colnum = 6 > colnum ? colnum : 6;
         var rownum = 6 / colnum; //行
         margin = 6 > 5 ? 1 : 1; //间距
-        ojwidth = (this.screenWidth - 120 - 2 * (margin + 0) * colnum) / colnum; //格子的宽
+        ojwidth = (this.screenWidth - 121 - 2 * (margin + 0) * colnum) / colnum; //格子的宽
         return ojwidth;
       },
       // setter
