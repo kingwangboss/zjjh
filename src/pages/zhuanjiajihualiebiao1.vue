@@ -29,6 +29,10 @@
         <div class="line"></div>
         <div class="bottom">
           <div class="item2">
+            <span>当前排名:</span>
+            <span style="color:rgb(214,49,56)">NO.{{planData.OrderBy}}</span>
+          </div>
+          <div class="item2">
             <span>当前成绩:</span>
             <span style="color:rgb(214,49,56)">{{planData.Score}}</span>
           </div>
@@ -83,7 +87,7 @@
       
 
       <div class="bottom-btnView1" v-if="planData.BuySign === 1">
-            <button class="bottom-btn2" style="background-color: rgb(145, 7, 95);border-color:rgba(0,0,0,0);color:#fff;" @click="buy">￥{{price}} 立即购买</button>
+            <button class="bottom-btn2" style="background-color: rgb(248, 198, 65);border-color:rgba(0,0,0,0);color:#fff;" @click="buy">￥{{price}} 立即购买</button>
       </div>
       <div class="bottom-btnView1" v-else-if="planData.BuySign === 2">
             <button class="bottom-btn1" style="background-color: rgb(248, 198, 65);border-color:rgba(0,0,0,0);color:#fff;" @click="buy">￥{{price}} 继续续费</button>
