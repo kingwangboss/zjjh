@@ -54,6 +54,8 @@
             </div>
 
             <firstcell3 class="firstcell1" :plandata="PlanData" v-if="cellflag"></firstcell3>
+
+            <div class="bottom-title">善意提醒：小心参考，理性投资</div>
         </div>
 
       </div>
@@ -143,6 +145,14 @@
   display: flex;
   flex-direction: column;
 }
+.bottom-title {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 12.5px;
+    color: gray;
+    padding-bottom: 10px;
+    background: white;
+  }
 </style>
 
 
